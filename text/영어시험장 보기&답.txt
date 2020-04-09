@@ -1,0 +1,277 @@
+변수>
+(1) 1
+1. The first letter of the variable is capitalized.
+2. When a word changes, the first letter shall be capitalized.
+3. Reservation word cannot be used.
+
+(2) 2
+1. int nomber=1;
+2. String class="1ban";
+3. char  gender='M';
+
+(3) 3
+1. long
+2. double
+3. char
+
+(4) 3
+1. int a = 'a';
+2. double d = 1;
+3. String s = 'coffee';
+
+(5) 3
+1. Automatic transformation occurs when converting from small to large data types.
+2. The integer is automatically converted by float(double).
+3. Boolean is forced to convert.
+
+
+<연산자>
+(1) 3
+1. String a = "apple";  System.out.println(a=="apple");
+2. String a = ((a > 3) | (a > 1))? "true" : "false";
+3. int a = 0; a+= 3;
+
+(2) 3
+1. ++  transpiration operator
+2. += Accumulated  entrance operator
+3.  = Relational comparison operator
+
+(3) 3
+1. logical operator
+2. arithmetic operator
+3. substitution operator
+(4) 2
+1. 2
+2. 3
+3. 4
+
+(5) 2
+1. a < = b? a++ : b- -;
+2. a + b ? a++: b- -;
+3. a == b? (b == c? a++: b++);
+
+
+<제어문>
+(1) 1
+1. for(int i =0; i>100; i++){} 
+2. for(int i=1; i <1; i++){}
+3. while(false);
+
+(2) 1
+1. The value of the string is more advantageous than the SWITCH when dividing the condition.
+2. If there is a condition to divide when the first condition is not met, you can ask in detail using ELSE IF.
+3. If the conditions are not met, the logic can be created using ELSE.
+
+(3) 2
+1 .You have to write your own transposition.
+2. "Do" must be used together to use it.
+3. With "true," you can enjoy it indefinitely until the break is activated.
+
+(4) 2
+1. break
+2. return 
+3. continue
+
+(5) 1
+1. for(int i = 0; i<10, i++){}
+2. for(int a : arr[]){}
+3. for(int i,j; i<100||j<50; i+=2,j++){}
+
+
+<배열>
+(1) 2
+1. Declared in stack and assigned to the heap memory area.
+2. Declaring an array of five compartments will result in an index being given from 1 to 5.
+3. Using the index of an array, the same data type can be grouped and managed by repeating statements.
+
+(2) 3
+1. int[] a = new int [5];
+2. int a[] = new int [5];
+3. int[] a = new int[5],{1,2,3,4,5};
+
+(3) 2
+1.size()
+2.length()
+3.sizeof()
+
+(4) 3
+1. Copy using the arraycopy() method.
+2. int arr1[1] = arr2[1]; 
+3. int[] arr1 = arr2;
+
+(5) 3
+1. Insert Sort
+2. Bubble Sort
+3. Selected Sort
+
+
+<객체>
+(1) 1
+1. abstract
+2. polymorphism
+3. encapsulation
+
+(2) 2
+1. private
+2.  static
+3. protected
+
+(3) 1
+1. public static final int a;
+2. public final static int a = 3;
+3. private static String ="1";
+
+(4) 3
+1. Overloading is impossible.
+2. be unable to put in parameter
+3. "This" allows you to put a value into the member variable.
+
+(5) 2
+1. member variable
+2. class variable
+3. lacale variable
+
+
+<상속>
+(1) 2
+1. A class created with multiple inheritance is called a superclass.
+2. Inheritance can be used to improve maintenance.
+3. The technique of re-correcting inherited methods is called overloading.
+
+(2) 1
+1. Object
+2. EveryThing
+3. System
+
+(3) 3
+1. inheritance
+2. overloading
+3. overriding
+
+(4) 2
+1. Defining methods in the same class
+2. Same or more specific exception type when an exception occurs
+3. Access controller is irrelevant
+
+(5) 2
+1. parent class
+2. sub class
+3. super class
+
+
+<다형성>
+(1) 3
+1.insteadOf
+2.isParent
+3.instanceOf
+
+(2) 3
+1. The move() method of the Sonata class is executed.
+2. The move() method of the Avante class is executed.
+3. The move() method of the car class is executed.
+(3) 2
+1. static final String IHG ="james";
+2. void  sample(){}
+3. String IHG="james";
+
+(4) 2
+1. public class StudentLee  extends Princess implements Bold,Tired{}
+2. public class StudentLee extends Princess,Prince implements Tired{}
+3. public class StudentLee extends Princess,implements Tired{}
+
+(5) 2
+1. forcing override
+2. Enables object creation
+3. Create objects through constructors
+
+
+<기본API>
+(1) 1
+1. The string value cannot be modified.
+2. Increase size using buffer specified in default 16-character size
+3. Does not provide thread safe function
+
+(2) 3
+1. Date
+2. GregorianCalendar
+3. WhatTime
+
+(3) 1
+1. subString()
+2. split()
+3. StringTokenizer
+
+(4) 2
+1. String Buffer
+2. String Builder 
+3. String 
+
+(5) 2
+1. Auto Unboxing
+2. Auto Boxing
+3. Handling Exception
+
+
+<예외처리>
+(1) 3
+1. Compile Error
+2. Logical Error
+3. Command Error
+
+(2) 2
+1. EOFException
+2. TypeMissMatchException
+3. FileNotFoundException
+
+(3) 3
+1.throws
+2.try~catch
+3.Add main method to interval where exception occurs
+
+(4) 3
+1. IndexOutOfBounds Exception
+2. NullPointer Exception
+3. FileNotFound Exception
+
+(5) 2
+1. ClassCast Exception
+2. ArrayIndexOutOfBound Exception
+3. Arithmetic Exception
+
+<컬렉션>
+ (1)  1
+
+1.ArrayList
+
+2.Vector
+
+3.Properties
+
+(2) 2
+
+1.add
+
+2.length
+
+3. clear
+
+(3) 2
+1. Set
+2. Map
+3. List
+
+(4) 1
+
+1.Stack
+
+2.Queue
+
+3.Heap
+
+(5) 3
+
+1.The length of the array is automatically extended.
+
+2.Easy to manage when modifying or removing
+
+3. You can link adjacent references and manage them like chains.
