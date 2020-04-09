@@ -1,7 +1,5 @@
 package com.kh.parkBBakBBak.view;
 
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -53,9 +51,10 @@ public class MenuPanel extends JPanel {
 		public void mouseClicked(MouseEvent e) {
 
 			ChangePanel change = new ChangePanel(mf, panel);
-			WorldPanel world = new WorldPanel(mf);
+//			WorldPanel world = new WorldPanel(mf);
+			LoginPage login = new LoginPage(mf);
 
-			change.replacePanel(world);
+			change.replacePanel(login);
 		}
 
 		@Override
