@@ -17,7 +17,9 @@ public class WorldPanel extends JPanel {
 
 	private JFrame mf;
 	private JPanel panel;
-	private JLabel avatar;
+	private JLabel avatar = new JLabel(
+			new ImageIcon(new ImageIcon("images/standFront.png").getImage().getScaledInstance(52, 152, 0)));
+
 	private Icon moveFront;
 	private Icon moveBack;
 	private Icon moveLeft;
@@ -37,8 +39,6 @@ public class WorldPanel extends JPanel {
 
 		mf.setTitle("±æ°Å¸®");
 		
-		avatar = new JLabel(
-				new ImageIcon(new ImageIcon("images/standFront.png").getImage().getScaledInstance(52, 152, 0)));
 		avatar.setLocation(500, 380);
 		avatar.setSize(52, 152);
 
