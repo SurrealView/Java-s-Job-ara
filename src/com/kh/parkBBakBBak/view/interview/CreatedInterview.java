@@ -20,52 +20,35 @@ import com.kh.parkBBakBBak.view.ChangePanel;
 import com.kh.parkBBakBBak.view.MainFrame;
 import com.kh.parkBBakBBak.view.WorldPanel;
 
-public class CreatedInterview extends JPanel implements MouseListener, ActionListener {
-	protected ArrayList<JButton> talk = new ArrayList<JButton>();
-	protected static final String ADDRESS = "images/";
-	protected Font font;
-	private JFrame mf;
-	private JPanel panel;
-	
-	protected JButton menuButton, backButton;
-	
+public class CreatedInterview {
+//	protected ArrayList<JButton> talk = new ArrayList<JButton>();
+//	protected static final String ADDRESS = "images/";
+//	protected Font font;
+//	private JFrame mf;
+//	private JPanel panel;
 
-	public void showQuest(ArrayList<JButton> buttonArr, String[] question) {
+	protected JButton menuButton, backButton;
+	public CreatedInterview() {
+		System.out.println("CREATEDInterview Ï∂úÎ†•Îê®");
+	}
+
+	public ArrayList<JButton> showQuest(ArrayList<JButton> buttonArr, String[] question) {
 
 		for (int i = 0; i < question.length; i++) {
 			buttonArr.add(new JButton(question[i]));
-			buttonArr.get(i).setFont(new Font("∏º¿∫ ∞ÌµÒ", font.PLAIN, 26));
+			buttonArr.get(i).setFont(new Font("ÎßëÏùÄ Í≥†Îîï", font.PLAIN, 26));
 			buttonArr.get(i).setSize(700, 40);
 			buttonArr.get(i).setLocation(225, 550 + (60 * i));
 			buttonArr.get(i).setBorderPainted(false);
 			buttonArr.get(i).setContentAreaFilled(false);
 			buttonArr.get(i).setFocusPainted(false);
 			buttonArr.get(i).setHorizontalAlignment(SwingConstants.LEFT);
-			this.add(buttonArr.get(i));
-			 buttonArr.get(i).addActionListener(this);
+			buttonArr.get(i).addActionListener(this);
 		}
+		return buttonArr;
 	}
 
-	public JLabel addJLabelImage(JLabel label, String path, int x, int y) {
-
-		Image image = new ImageIcon(ADDRESS + path).getImage().getScaledInstance(x, y, 0);
-		label = new JLabel(new ImageIcon(image));
-		label.setSize(x, y);
-
-		return label;
-	}
-
-	public JButton addJButtonImage(JButton button, String path, int x, int y) {
-
-		Image image = new ImageIcon(ADDRESS + path).getImage().getScaledInstance(x, y, 0);
-		button = new JButton(new ImageIcon(image));
-		button.setSize(x, y);
-		button.setBorderPainted(false);
-		button.setContentAreaFilled(false);
-		button.setFocusPainted(false);
-
-		return button;
-	}
+	
 
 	public void creatTestPlace() {
 
@@ -91,7 +74,7 @@ public class CreatedInterview extends JPanel implements MouseListener, ActionLis
 	public void createCountCoupons(int coffeeCoupon) {
 
 		JLabel label = new JLabel(" X " + coffeeCoupon);
-		label.setFont(font = new Font("∏º¿∫ ∞ÌµÒ", font.PLAIN, 24));
+		label.setFont(font = new Font("ÎßëÏùÄ Í≥†Îîï", font.PLAIN, 24));
 		label.setSize(50, 40);
 		label.setLocation(160, 8);
 		this.add(label);
@@ -99,7 +82,7 @@ public class CreatedInterview extends JPanel implements MouseListener, ActionLis
 
 	public void createBackSpace() {
 
-		backButton = addJButtonImage(new JButton(), "backButton.png", 60, 60);
+		JButton backButton = addJButtonImage(new JButton(), "backButton.png", 60, 60);
 		backButton.setLocation(1020, 15);
 		backButton.addActionListener(this);
 		this.add(backButton);
@@ -203,13 +186,13 @@ public class CreatedInterview extends JPanel implements MouseListener, ActionLis
 
 		if (e.getSource() == this.menuButton) {
 
-			System.out.println("∏ﬁ¥∫∫∏±‚");
+			System.out.println("Î©îÎâ¥Î≥¥Í∏∞");
 		} else if (e.getSource() == this.backButton) {
 
-			System.out.println("µ⁄∑Œ ∞•∞≈¥Ÿ");
+			System.out.println("Îí§Î°ú Í∞àÍ±∞Îã§");
 //			ChangePanel change = new ChangePanel(mf, panel);
-//			WorldPanel world = new WorldPanel(mf);
-//			ChangePanel.replacePanel(mf,panel,world);
+			WorldPanel world = new WorldPanel(mf);
+			ChangePanel.replacePanel(mf,panel,world);
 //			change.replacePanel(world);
 		}
 

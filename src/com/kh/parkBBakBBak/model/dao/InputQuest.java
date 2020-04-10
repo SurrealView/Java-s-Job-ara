@@ -47,7 +47,7 @@ public class InputQuest {
 
 			int count = token.countTokens();
 
-			System.out.println(count);
+			
 
 			for (int i = 0; i < count; i++) {
 
@@ -73,7 +73,7 @@ public class InputQuest {
 
 			count = token.countTokens();
 
-			System.out.println(count);
+			System.out.println("¹®Á¦ ÃâÁ¦µÊ");
 
 			for (int i = 0; i < count; i++) {
 
@@ -113,7 +113,7 @@ public class InputQuest {
 
 			 count = token.countTokens();
 
-			System.out.println(count);
+			
 
 			for (int i = 0; i < count; i++) {
 
