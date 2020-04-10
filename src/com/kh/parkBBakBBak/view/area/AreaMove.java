@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.ChangePanel;
+import com.kh.parkBBakBBak.view.MaybeCafePanel;
 import com.kh.parkBBakBBak.view.cafe.BackgroundPanel;
 //import com.kh.parkBBakBBak.view.MaybeAcademyPanel;
 //import com.kh.parkBBakBBak.view.MaybeCafePanel;
@@ -29,7 +30,6 @@ public class AreaMove {
 						if (avatar.getY()>= 100 && avatar.getY() <= 100) {
 							System.out.println("출력");
 //							ChangePanel change = new ChangePanel(mf, panel);
-//							MaybeCafePanel cafe = new MaybeCafePanel(mf);
 							Player p = new Player();
 							BackgroundPanel cafe = new BackgroundPanel(mf, p);
 							ChangePanel.replacePanel(mf,panel,cafe);
@@ -38,6 +38,10 @@ public class AreaMove {
 					// 역
 					if (avatar.getX() >= 820 && avatar.getX() <= 830)
 						if (avatar.getY() >= 550 && avatar.getY() <= 550) {
+							
+							System.out.println("출력");
+							MaybeCafePanel cafe2 = new MaybeCafePanel(mf);
+							ChangePanel.replacePanel(mf,panel,cafe2);
 //							ChangePanel change = new ChangePanel(mf, panel);
 //							MaybeStationPanel station = new MaybeStationPanel(mf);
 //							change.replacePanel(station);
@@ -47,6 +51,7 @@ public class AreaMove {
 						if (avatar.getY() >= 100 && avatar.getY() <= 100) {
 							System.out.println("출력");
 							panel.remove(avatar);
+							mf.remove(panel);
 //							ChangePanel change = new ChangePanel(mf, panel);
 							SelectInterview interview = new SelectInterview(mf);
 							ChangePanel.replacePanel(mf,panel,interview);

@@ -208,8 +208,8 @@ public class CreatedInterview extends JPanel implements MouseListener, ActionLis
 
 			System.out.println("뒤로 갈거다");
 //			ChangePanel change = new ChangePanel(mf, panel);
-			WorldPanel world = new WorldPanel(mf);
-			ChangePanel.replacePanel(mf,panel,world);
+//			WorldPanel world = new WorldPanel(mf);
+//			ChangePanel.replacePanel(mf,panel,world);
 //			change.replacePanel(world);
 		}
 
