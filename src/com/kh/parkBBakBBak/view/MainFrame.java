@@ -6,12 +6,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class MainFrame {
-	public static int x, y;
 
 	public MainFrame() {
 		JFrame mainFrame = new JFrame();
-		imageBackground(x, y);
-		mainFrame.setSize(x, y);
+		imageBackground(1194, 834);
+		mainFrame.setSize(1194, 834);
+//		mainFrame.setLocation(0, 0);
 		mainFrame.setLocationRelativeTo(null);// 창이 가운데 나오게
 		mainFrame.setTitle("메인 화면");
 	
@@ -29,9 +29,6 @@ public class MainFrame {
 		ImageIcon bgIcon = new ImageIcon("images/mainPic.png");
 		x = bgIcon.getIconWidth();
 		y = bgIcon.getIconHeight();
-
-		this.x = x;
-		this.y = y;
 
 		Image bgImg = bgIcon.getImage();
 		Image changedBgImg = bgImg.getScaledInstance(x, y, Image.SCALE_SMOOTH);

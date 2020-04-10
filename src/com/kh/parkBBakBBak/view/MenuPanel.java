@@ -11,31 +11,24 @@ import javax.swing.JPanel;
 public class MenuPanel extends JPanel {
 	private JFrame mf;
 	private JPanel panel;
-//	private JPanel panel = new JPanel() {
-//		Image background = new ImageIcon("image/MainPic.png").getImage();
-//		public void paint(Graphics g) {
-//			// 그리는 함수
-//			g.drawImage(background, 0, 0, null);
-//			// background를 그려줌
-//		}
-//	};
 
 	public MenuPanel(JFrame mf) {
 		this.mf = mf;
-		this.setLayout(null);
 		panel = this;
 
-		
+		this.setLayout(null);
+		this.setSize(1194, 834);
+		this.setLocation(0,0);
 //		mf.add(panel);
 		JLabel Background = new JLabel(
-				new ImageIcon(new ImageIcon("images/mainPic.png").getImage().getScaledInstance(MainFrame.x, MainFrame.y, 0)));
+				new ImageIcon(new ImageIcon("images/mainPic.png").getImage().getScaledInstance(1194, 834, 0)));
 		Background.setBounds(0, 0, 1194, 834);
 
 		JLabel startButton = new JLabel(
 				new ImageIcon(new ImageIcon("images/StartButton.png").getImage().getScaledInstance(200, 100, 0)));
 		
-		int buttonX = MainFrame.x/2 - 200/2;
-		int buttonY = MainFrame.y/2 + 100;
+		int buttonX = 1194/2 - 200/2;
+		int buttonY = 834/2 + 100;
 
 		startButton.setBounds(buttonX, buttonY, 200, 100);
 		startButton.addMouseListener(new MyMouseAdapter());
