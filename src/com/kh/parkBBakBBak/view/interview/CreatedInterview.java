@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 
 import com.kh.parkBBakBBak.view.ChangePanel;
 import com.kh.parkBBakBBak.view.MainFrame;
+import com.kh.parkBBakBBak.view.WorldPanel;
 
 public class CreatedInterview extends JPanel implements MouseListener, ActionListener {
 	protected ArrayList<JButton> talk = new ArrayList<JButton>();
@@ -206,6 +207,9 @@ public class CreatedInterview extends JPanel implements MouseListener, ActionLis
 		} else if (e.getSource() == this.backButton) {
 
 			System.out.println("뒤로 갈거다");
+			ChangePanel change = new ChangePanel(mf, panel);
+			WorldPanel world = new WorldPanel(mf);
+			change.replacePanel(world);
 		}
 
 	}

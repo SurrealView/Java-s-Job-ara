@@ -26,8 +26,8 @@ public class Join extends JPanel{
 		panel = this;
 		
 		this.setLayout(null);
-		this.setSize(1194,834);
-		this.setLocation(0,0);
+//		this.setSize(1194,834);
+//		this.setLocation(0,0);
 		
 		// 플레이어 객체 생성
 		Player p = new Player();
