@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.area.AreaBlock;
 import com.kh.parkBBakBBak.view.area.AreaMove;
 
@@ -25,14 +26,17 @@ public class WorldPanel extends JPanel {
 	private Icon standBack;
 	private Icon standLeft;
 	private Icon standRight;
+	private int charCnt = 0;
 
 	public WorldPanel(JFrame mf) {
+
+
 		this.mf = mf;
 		panel = this;
 		this.setLayout(null);
 
 		mf.setTitle("±æ°Å¸®");
-
+		
 		avatar = new JLabel(
 				new ImageIcon(new ImageIcon("images/standFront.png").getImage().getScaledInstance(52, 152, 0)));
 		avatar.setLocation(500, 380);

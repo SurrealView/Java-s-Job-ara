@@ -61,9 +61,10 @@ public class SmallIntroduce1 extends CreatedInterview implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
-		ChangePanel change = new ChangePanel(mf, panel);
+//		ChangePanel change = new ChangePanel(mf, panel);
 		SmallIntroduce2 intro2 = new SmallIntroduce2(mf);
-		change.replacePanel(intro2);
+		ChangePanel.replacePanel(mf,panel,intro2);
+//		change.replacePanel(intro2);
 
 
 	}
@@ -76,9 +77,10 @@ public class SmallIntroduce1 extends CreatedInterview implements MouseListener {
 			System.out.println("메뉴보기");
 			
 		} else if (e.getSource() == backButton) {
-			ChangePanel change = new ChangePanel(mf, panel);
+//			ChangePanel change = new ChangePanel(mf, panel);
 			SelectInterview st = new SelectInterview(mf);
-			change.replacePanel(st);
+			ChangePanel.replacePanel(mf,panel,st);
+//			change.replacePanel(st);
 
 			
 		}

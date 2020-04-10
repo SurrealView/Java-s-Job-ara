@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class MainFrame {
+	public static ChangePanel cp;
 
 	public MainFrame() {
 		JFrame mainFrame = new JFrame();

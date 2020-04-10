@@ -5,19 +5,28 @@ import javax.swing.JPanel;
 
 public class ChangePanel {
 
-	private JFrame mf;
-	private JPanel panel;
+//	private JFrame mf;
+//	private JPanel panel;
 
-	public ChangePanel(JFrame mf, JPanel panel) {
-		this.mf = mf;
-		this.panel = panel;
-	}
-
-	public void replacePanel(JPanel changePanel) {
-		mf.remove(panel);
+	public ChangePanel() {}
+	
+//	public ChangePanel(JFrame mf, JPanel panel) {
+//		this.mf = mf;
+//		this.panel = panel;
+//	}
+//	public void replacePanel(JPanel changePanel) {
+//		mf.remove(panel);
+//		mf.add(changePanel);
+//		changePanel.setSize(1194,834);
+//		changePanel.setLocation(0,0);
+//		mf.repaint();
+//	}
+	public static void replacePanel(JFrame mf, JPanel oldPanel, JPanel changePanel) {
+		mf.remove(oldPanel);
 		mf.add(changePanel);
 		changePanel.setSize(1194,834);
 		changePanel.setLocation(0,0);
 		mf.repaint();
 	}
+	
 }

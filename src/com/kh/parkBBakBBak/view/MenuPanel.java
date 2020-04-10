@@ -42,12 +42,13 @@ public class MenuPanel extends JPanel {
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-
-			ChangePanel change = new ChangePanel(mf, panel);
+//			ChangePanel change = new ChangePanel(mf, panel);
 //			WorldPanel world = new WorldPanel(mf);
 			LoginPage login = new LoginPage(mf);
 
-			change.replacePanel(login);
+//			change.replacePanel(login);
+
+			ChangePanel.replacePanel(mf,panel,login);
 		}
 
 		@Override

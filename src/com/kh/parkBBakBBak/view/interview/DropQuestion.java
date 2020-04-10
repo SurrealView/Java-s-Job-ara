@@ -63,9 +63,10 @@ public class DropQuestion extends CreatedInterview {
 			System.out.println("메뉴보기");
 			
 		} else if (e.getSource() == backButton) {
-			ChangePanel change = new ChangePanel(mf, panel);
+//			ChangePanel change = new ChangePanel(mf, panel);
 			WorldPanel world = new WorldPanel(mf);
-			change.replacePanel(world);
+			ChangePanel.replacePanel(mf,panel,world);
+//			change.replacePanel(world);
 
 
 			
