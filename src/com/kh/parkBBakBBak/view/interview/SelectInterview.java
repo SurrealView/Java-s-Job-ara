@@ -56,13 +56,14 @@ public class SelectInterview extends CreatedInterview {
 
 		if (e.getSource() == talk.get(0)) {
 			
-			ChangePanel change = new ChangePanel(mf, panel);
+//			ChangePanel change = new ChangePanel(mf, panel);
 			SmallIntroduce1 intro1 = new SmallIntroduce1(mf);
-			change.replacePanel(intro1);
+			ChangePanel.replacePanel(mf,panel,intro1);
+//			change.replacePanel(intro1);
 
 
 		}else if(e.getSource()==talk.get(1)) {
-			System.out.println("시발 머같네");
+			System.out.println("머같네");
 			
 		}else if(e.getSource()==menuButton) {
 			

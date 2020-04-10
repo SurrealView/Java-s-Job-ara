@@ -2,12 +2,8 @@ package com.kh.parkBBakBBak.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import com.kh.parkBBakBBak.model.vo.Player;
 
 public class LoginPage extends JPanel {
 	
@@ -76,6 +74,9 @@ public class LoginPage extends JPanel {
 		inputPw.setBorder(null);
 		this.add(inputPw);
 		
+
+		Player p = new Player();
+		
 		JButton clickLogin = new JButton("·Î±×ÀÎ");
 		clickLogin.setSize(280,34);
 		clickLogin.setLocation(458,624);
@@ -87,10 +88,10 @@ public class LoginPage extends JPanel {
 			clickLogin.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					ChangePanel change = new ChangePanel(mf, panel);
+//					ChangePanel change = new ChangePanel(mf, panel);
 					WorldPanel world = new WorldPanel(mf);
-
-					change.replacePanel(world);
+					ChangePanel.replacePanel(mf,panel,world);
+//					change.replacePanel(world);
 				}
 			});
 		
@@ -105,10 +106,10 @@ public class LoginPage extends JPanel {
 		clickJoin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePanel change = new ChangePanel(mf, panel);
+//				ChangePanel change = new ChangePanel(mf, panel);
 				Join join = new Join(mf);
-
-				change.replacePanel(join);
+				ChangePanel.replacePanel(mf,panel,join);
+//				change.replacePanel(join);
 			}
 		});
 		

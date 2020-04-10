@@ -207,9 +207,10 @@ public class CreatedInterview extends JPanel implements MouseListener, ActionLis
 		} else if (e.getSource() == this.backButton) {
 
 			System.out.println("뒤로 갈거다");
-			ChangePanel change = new ChangePanel(mf, panel);
+//			ChangePanel change = new ChangePanel(mf, panel);
 			WorldPanel world = new WorldPanel(mf);
-			change.replacePanel(world);
+			ChangePanel.replacePanel(mf,panel,world);
+//			change.replacePanel(world);
 		}
 
 	}

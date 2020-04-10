@@ -37,9 +37,10 @@ public class SmallIntroduce2 extends CreatedInterview {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		ChangePanel change = new ChangePanel(mf, panel);
+//		ChangePanel change = new ChangePanel(mf, panel);
 		DropQuestion dq = new DropQuestion(mf);
-		change.replacePanel(dq);
+		ChangePanel.replacePanel(mf,panel,dq);
+//		change.replacePanel(dq);
 		//this.bbakbbak.setHp(this.bbakbbak.getHp()-2);
 	}
 	
@@ -51,9 +52,10 @@ public class SmallIntroduce2 extends CreatedInterview {
 		} else if (e.getSource() == backButton) {
 
 			
-			ChangePanel change = new ChangePanel(mf, panel);
+//			ChangePanel change = new ChangePanel(mf, panel);
 			SmallIntroduce1 intro1 = new SmallIntroduce1(mf);
-			change.replacePanel(intro1);
+			ChangePanel.replacePanel(mf,panel,intro1);
+//			change.replacePanel(intro1);
 		}
 	}
 	

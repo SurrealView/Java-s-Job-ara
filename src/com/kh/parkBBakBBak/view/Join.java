@@ -134,11 +134,12 @@ public class Join extends JPanel{
 		clickJoin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePanel change = new ChangePanel(mf, panel);
+//				ChangePanel change = new ChangePanel(mf, panel);
 //				WorldPanel world = new WorldPanel(mf);
 				LoginPage login = new LoginPage(mf);
+				ChangePanel.replacePanel(mf,panel,login);
 
-				change.replacePanel(login);
+//				change.replacePanel(login);
 			}
 		});
 		
