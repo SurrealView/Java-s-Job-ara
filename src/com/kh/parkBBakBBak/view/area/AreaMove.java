@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.kh.parkBBakBBak.view.ChangePanel;
+import com.kh.parkBBakBBak.view.cafe.BackgroundPanel;
 //import com.kh.parkBBakBBak.view.MaybeAcademyPanel;
 //import com.kh.parkBBakBBak.view.MaybeCafePanel;
 //import com.kh.parkBBakBBak.view.MaybeStationPanel;
@@ -25,8 +26,8 @@ public class AreaMove {
 					if (avatar.getX() >= 355 && avatar.getX() <= 370)
 						if (avatar.getY()>= 100 && avatar.getY() <= 120) {
 							ChangePanel change = new ChangePanel(mf, panel);
-//							MaybeCafePanel cafe = new MaybeCafePanel(mf);
-//							change.replacePanel(cafe);
+							BackgroundPanel cafe = new BackgroundPanel(mf);
+							change.replacePanel(cafe);
 						}
 					// ¿ª
 					if (avatar.getX() >= 820 && avatar.getX() <= 830)

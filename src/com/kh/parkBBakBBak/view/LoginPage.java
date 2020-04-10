@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import com.kh.parkBBakBBak.view.cafe.BackgroundPanel;
+
 public class LoginPage extends JPanel {
 	
 	private JFrame mf;
@@ -106,9 +108,9 @@ public class LoginPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ChangePanel change = new ChangePanel(mf, panel);
-				Join join = new Join(mf);
+				BackgroundPanel bp = new BackgroundPanel(mf);
 
-				change.replacePanel(join);
+				change.replacePanel(bp);
 			}
 		});
 		
