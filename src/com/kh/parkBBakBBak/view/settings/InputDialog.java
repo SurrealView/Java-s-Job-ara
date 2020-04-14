@@ -10,8 +10,8 @@ public class InputDialog {
       JOptionPane input = new JOptionPane();
       UIManager.put("OptionPane.background", Color.GRAY);
       UIManager.put("Panel.background", Color.GRAY);
-      UIManager.put("Button.foreground", Color.white);
-      UIManager.put("Button.background", Color.BLACK);
+//      UIManager.put("Button.foreground", Color.white);
+      UIManager.put("Button.background", Color.WHITE);
      
       
       String str = input.showInputDialog("입력할 사항은?");
