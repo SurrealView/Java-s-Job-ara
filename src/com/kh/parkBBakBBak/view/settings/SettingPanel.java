@@ -62,8 +62,6 @@ public class SettingPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ChangePanel.replacePanel(mf, panel, new StatusPanel(mf, p));
-				
-				System.out.println("정보 출력");
 			}
 		});
 
