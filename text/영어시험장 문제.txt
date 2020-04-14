@@ -1,97 +1,54 @@
-<변수>
-
-1. Which of the following is not a naming rule for variables (including implicit rules)?
-2. One of the following is wrong
-3. Which data is different byte size??
-4. Which of the following statements has an error?
-5. Choose the wrong one about the casting.
-
-
-<연산자>
-
-1. Choose the correct sentence using the operator.
-2. Choose the operator that is incorrectly connected
-3. Choose the first of the following operations to be processed.
-4. What does the question and answer match??
-    int num = 1;	
-    int result = ++num;
-    result += (num++ - 1);
-    System.out.println(result);
-5. Choose the wrong expression as the triad operator.
-
-<제어문>
-
-1. Which sentence falls into infinite loop?
-2. What is not a feature of an IF?
-3. What is not a feature of a WHILE?
-4. What is not a branch Statement?
-5. Which of the following statements is incorrect?
-
-
-<배열>
-
-1. What is NOT a feature of the Arrays?
-2. What is the wrong sentence?
-3. What is the method that tells you the length of the Arrays?
-4. How do you make shallow copies of an Arrays?
-5. What is the fastest way to sort small data?
-
-<객체>
-
-1. What is false (about the three characteristics) of object-oriented language?
-2. Which of the following is not an access restriction?
-3. Choose the impossible.
-4. What is true about the Constructor?
-5. Which variable is stored in the static area and has a static keyword?
-
-
-<상속>
-
-1. What is true about inheritance?
-2. What is the name of the top class of all classes?
-3. Choose the correct words for the next blank.
-    You can change the method's original function by using the method provided by the Object class ( ).
-4. Choose the correct one for override.
-5. Choose a word that has a different meaning from the upper class.
-
-
-<다형성>
-
-1.Which operator do you use to determine which class type of object address a reference variable is referring to?
-2.What are the results of the execution?
-    Car sonata = new Sonate();
-    Car avante = new Avante();
-    so.move();
-    //Move() was written inheriting the move() method of the Car class.
-3. What's the wrong sentence?
-4. What's the wrong sentence?
-5. Which of the following is true about abstract classes?
-
-
-<기본API>
-
-1. What is wrong with the characteristics of the StringBuilder class?
-2. What is not an API used to provide a date?
-3. Which class or method does not function to divide a string according to a particular preference?
-4. Which of the following classes provides thread safe?
-5. How to call converts the base data type to the Wrapper class?
-
-
-<예외처리>
-
-1. Which of the following is not an error?
-2. Choose Unchecked Exception
-3. What is not a method of handling exceptions?
-4. Which of the following is mandatory for exception handling?
-5. What are the exceptions to reference beyond the index range of an array?
-
-
-
-<컬렉션>
-
-1. Choose the non-list collection from the following?
-2. Which of the following methods is not provided by ArrayList?
-3. Which collection consists of keys and values that do not allow duplicate storage and that allows duplicate storage?
-4. What is the structure of the data in LIFO (Last in First Out) format?
-5. What is not an advantage of ArrayList?
-
+Which of the following is not a naming rule for variables (including implicit rules)?$
+One of the following is wrong?$
+Which data is different byte size?$
+Which of the following statements has an error?$
+Choose the wrong one about the casting.$
+Choose the correct sentence using the operator.$
+Choose the operator that is incorrectly connected.$
+Choose the first of the following operations to be processed.$
+What does the question and answer match?
+int num = 1; int result = ++num; result += (num++ - 1);
+System.out.println(result);$
+Choose the wrong expression as the triad operator.$
+Which sentence falls into infinite loop?$
+What is not a feature of an IF?$
+What is not a feature of a WHILE?$
+What is not a branch Statement?$
+Which of the following statements is incorrect?$
+What is NOT a feature of the Arrays?$
+What is the wrong sentence?$
+What is the method that tells you the length of the Arrays?$
+How do you make shallow copies of an Arrays?$
+What is the fastest way to sort small data?$
+What is false (about the three characteristics) of object-oriented language?$
+Which of the following is not an access restriction?$
+Choose the impossible.$
+What is true about the Constructor?$
+Which variable is stored in the static area and has a static keyword?$
+What is true about inheritance?$
+What is the name of the top class of all classes?$
+Choose the correct words for the next blank.
+You can change the method's original function by using the method provided by the Object class ( ).$
+Choose the correct one for override.$
+Choose a word that has a different meaning from the upper class.$
+Which operator do you use to determine which class type of object address a reference variable is referring to?$
+What are the results of the execution?
+Car sonata = new Sonate();Car avante = new Avante();so.move();//Move() was written inheriting the move() method of the Car class.$
+What's the wrong sentence?$
+What's the wrong sentence?$
+Which of the following is true about abstract classes?$
+What is wrong with the characteristics of the StringBuilder class?$
+What is not an API used to provide a date?$
+Which class or method does not function to divide a string according to a particular preference?$
+Which of the following classes provides thread safe?$
+How to call converts the base data type to the Wrapper class?$
+Which of the following is not an error?$
+Choose Unchecked Exception.$
+What is not a method of handling exceptions?$
+Which of the following is mandatory for exception handling?$
+What are the exceptions to reference beyond the index range of an array?$
+Choose the non-list collection from the following?$
+Which of the following methods is not provided by ArrayList?$
+Which collection consists of keys and values that do not allow duplicate storage and that allows duplicate storage?$
+What is the structure of the data in LIFO (Last in First Out) format?$
+What is not an advantage of ArrayList?$

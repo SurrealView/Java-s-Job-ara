@@ -1,6 +1,7 @@
 package com.kh.parkBBakBBak.view;
 
 import java.awt.Color;
+import java.awt.Dialog;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,28 +10,35 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import com.kh.parkBBakBBak.controller.LoginManager;
 import com.kh.parkBBakBBak.model.vo.Player;
 
 public class Join extends JPanel{
 	
 	private JFrame mf;
 	private JPanel panel;
+	private Player p;
+	private int count = 0;
+	private boolean check;
 	
-	public Join(JFrame mf) {
-		
+	public Join() {}
+	
+	public void createPlayer(JFrame mf,Player p) {
+		this.p = p;
 		this.mf = mf;
 		panel = this;
 		
 		this.setLayout(null);
-//		this.setSize(1194,834);
-//		this.setLocation(0,0);
+		this.setSize(1194,834);
+		this.setLocation(0,0);
 		
-		// 플레이어 객체 생성
-		Player p = new Player();
+		
+		
 		
 		JLabel id = new JLabel("아 이 디");
 		id.setSize(100,34);
@@ -57,8 +65,8 @@ public class Join extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String id = inputId.getText();
-				p.setUserId(id);
-//				System.out.println(p.getUserId());		// player 아이디 확인 용
+				p.setUserId(id + "\n");
+				System.out.println(p.getUserId());		// player 아이디 확인 용
 			}
 		});
 		
@@ -82,19 +90,25 @@ public class Join extends JPanel{
 		inputPw.setBorder(null);
 		
 		// 비밀번호 객체 저장
-			inputPw.addActionListener(new ActionListener() {
+		inputPw.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					char[] pw = inputPw.getPassword();
+				char[] pw = inputPw.getPassword();
+				
+				String pwd = "";
+				
+				for(char ch : pw) {
+					Character.toString(ch);
+					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
 					
-					for(char ch : pw) {
-//						(char).toString(ch)
-					}
-					
-					System.out.println(p.getUserPwd());
+					p.setUserPwd(pwd);
 				}
-			});		
+				
+				System.out.println(p.getUserPwd());			// 플레이어 비밀번호 확인용
+			}
+		});		
 		
 		this.add(inputPw);
 		
@@ -114,6 +128,30 @@ public class Join extends JPanel{
 		inputPw2.setSize(185,34);
 		inputPw2.setLocation(563, 595);
 		inputPw2.setBorder(null);
+		
+		
+		// 비밀번호 확인
+		inputPw2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				char[] pw = inputPw2.getPassword();
+				
+				String pwd = "";
+				
+				for(char ch : pw) {
+					Character.toString(ch);
+					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
+					
+					p.setCheckPwd(pwd);
+				}
+				
+				System.out.println(p.getCheckPwd());			// 플레이어 비밀번호 확인용
+				
+			}
+		});				
+		
 		this.add(inputPw2);
 		
 		JButton clickLogin = new JButton("비밀번호 확인");
@@ -121,6 +159,29 @@ public class Join extends JPanel{
 		clickLogin.setLocation(497,643);
 		clickLogin.setFont(new Font("맑은 고딕", Font.ITALIC, 15));
 		clickLogin.setBorder(null);
+		
+		clickLogin.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				count++;
+				if(p.getUserPwd().equals(p.getCheckPwd())) {
+					System.out.println("비밀번호 동일");
+					check = true;
+					JOptionPane.showMessageDialog(mf, "Password가 동일합니다!", "Password Check", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					System.out.println("비밀번호 다름");
+//					check++;
+					check = false;
+					JOptionPane.showMessageDialog(mf, "Password가 일치하지 않습니다!", "Password Check", JOptionPane.WARNING_MESSAGE);
+				}
+				
+				System.out.println("count : " + count);
+				System.out.println("check : " + check);
+				
+			}
+		});
+		
 		this.add(clickLogin);
 		
 		JButton clickJoin = new JButton("회원생성");
@@ -134,12 +195,29 @@ public class Join extends JPanel{
 		clickJoin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				ChangePanel change = new ChangePanel(mf, panel);
-//				WorldPanel world = new WorldPanel(mf);
-				LoginPage login = new LoginPage(mf);
-				ChangePanel.replacePanel(mf,panel,login);
-
-//				change.replacePanel(login);
+				
+				if(count == 0) {
+					// 패스워드 체크를 해주세요! dialog
+					JOptionPane.showMessageDialog(mf, "Password Check를 해주세요!", "경고", JOptionPane.WARNING_MESSAGE);
+					
+				} else {
+					if(check == true) {
+						// 플레이어 정보를 저장한 dat파일 저장
+						
+						LoginManager lm = new LoginManager();
+						lm.createPlayer(p);
+						
+						
+						ChangePanel.replacePanel(mf, panel, new LoginPage(mf,p)); 
+						
+						
+					} else {
+						// 비밀번호 확인을 다시 해주세요 dialog
+						JOptionPane.showMessageDialog(mf, "Password Check가 일치하지 않습니다!", "경고", JOptionPane.WARNING_MESSAGE);
+					}
+					
+				}
+				
 			}
 		});
 		
@@ -154,6 +232,9 @@ public class Join extends JPanel{
 		bg.setSize(1194, 834);
 		bg.setLocation(0, 0);
 		this.add(bg);
+		
+		
+		
 		
 	}
 

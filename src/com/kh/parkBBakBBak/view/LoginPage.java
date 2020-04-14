@@ -9,95 +9,141 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import com.kh.parkBBakBBak.controller.LoginManager;
 import com.kh.parkBBakBBak.model.vo.Player;
 
 public class LoginPage extends JPanel {
 	
 	private JFrame mf;
 	private JPanel panel;
-	
-	public LoginPage(JFrame mf) {
-		
+	private String loginId = "";
+	private String loginPw = "";
+	private Player p;
+
+	public LoginPage(JFrame mf,Player p) {
+		this.p = p;
 		this.mf = mf;
 		panel = this;
 		
 		this.setLayout(null);
-//		this.setSize(1194,834); ChangePanel에서 실행됨
-//		this.setLocation(0,0);
+		this.setSize(1194,834);
+		this.setLocation(0,0);
 		
-//		ArrayList<Image> img = new ArrayList<Image>();
-//		img.add(new ImageIcon("images/mainPic.png").getImage().getScaledInstance(1194, 834, 0));
-//		img.add(new ImageIcon("images/loginBox2.PNG").getImage().getScaledInstance(330, 240, 0));
-		
-		// 라벨 아이디 자리
-		// x:458 / y:520 / w:80 / h:34
 		JLabel id = new JLabel("아 이 디");
 		id.setSize(80,34);
 		id.setLocation(458,520);
 		id.setOpaque(true);
-		id.setBackground(new Color (255,255,255,125));
+		id.setBackground(new Color (255,255,255,60));
 		id.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		id.setForeground(Color.WHITE);
 		id.setHorizontalAlignment(JLabel.CENTER);
 		id.setVerticalAlignment(JLabel.CENTER);
 		this.add(id);
 		
-		JTextField inputId = new JTextField();
-		inputId.setSize(185,34);
-		inputId.setLocation(553, 520);
-		inputId.setBorder(null);
-//		inputId.setOpaque(true);
-//		inputId.setBackground(new Color (0,0,0,125));
-		inputId.setForeground(Color.WHITE);
-		this.add(inputId);
+		JTextField loginInputId = new JTextField();
+		loginInputId.setSize(185,34);
+		loginInputId.setLocation(553, 520);
+		loginInputId.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		loginInputId.setBorder(null);
+		loginInputId.setForeground(Color.BLACK);
 		
-		// 라벨 비밀번호 자리
-		// x:458 / y:572 / w:80 / h:34
+		// 아이디 객체 저장
+		loginInputId.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				loginId = loginInputId.getText();
+				System.out.println("loginId : " + loginId);
+			}
+		});
+		
+		this.add(loginInputId);
+		
 		JLabel pw = new JLabel("비밀번호");
 		pw.setSize(80,34);
 		pw.setLocation(458,572);
 		pw.setOpaque(true);
-		pw.setBackground(new Color (255,255,255,125));
+		pw.setBackground(new Color (255,255,255,60));
 		pw.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		pw.setForeground(Color.WHITE);
 		pw.setHorizontalAlignment(JLabel.CENTER);
 		pw.setVerticalAlignment(JLabel.CENTER);
 		this.add(pw);
 		
-		JPasswordField inputPw = new JPasswordField();
-		inputPw.setSize(185,34);
-		inputPw.setLocation(553, 572);
-		inputPw.setBorder(null);
-		this.add(inputPw);
+		JPasswordField loginInputPw = new JPasswordField();
+		loginInputPw.setSize(185,34);
+		loginInputPw.setLocation(553, 572);
+		loginInputPw.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		loginInputPw.setBorder(null);
 		
-
-		Player p = new Player();
+		// 비밀번호 확인
+		loginInputPw.addActionListener(new ActionListener() {
+				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String pw2 = loginInputPw.getText();
+				loginPw = pw2;
+				System.out.println("loginPw : " + loginPw);			// 플레이어 비밀번호 확인용
+			}
+		});						
+		
+		this.add(loginInputPw);
 		
 		JButton clickLogin = new JButton("로그인");
 		clickLogin.setSize(280,34);
 		clickLogin.setLocation(458,624);
+		clickLogin.setBackground(Color.WHITE);
 		clickLogin.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		clickLogin.setBorder(null);
 		this.add(clickLogin);
 		
 		// 매인 맵 입장
-			clickLogin.addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-//					ChangePanel change = new ChangePanel(mf, panel);
-					WorldPanel world = new WorldPanel(mf);
-					ChangePanel.replacePanel(mf,panel,world);
-//					change.replacePanel(world);
+		clickLogin.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int gaja = 0; 
+				
+				LoginManager lm = new LoginManager();
+				gaja = lm.checkLogin(loginId, loginPw, p);
+				
+				switch(gaja) {
+				case 0 :
+					JOptionPane.showMessageDialog(mf, "아이디가 존재하지 않습니다.", "Login fail", JOptionPane.WARNING_MESSAGE);
+					break;
+				case 1 : 
+					JOptionPane.showMessageDialog(mf, "비밀번호가 일치하지 않습니다.", "Login fail", JOptionPane.WARNING_MESSAGE);
+					break;
+				case 2 :
+					lm.getP();
+					System.out.println("lm탈출빡빡 노말 로그인 : " + lm.getP().toString());
+					WorldPanel world = new WorldPanel(mf,lm.getP());
+					ChangePanel.replacePanel(mf, panel, world);
+					break;
+				case 3 :
+					lm.getP();
+					System.out.println("lm탈출빡빡 중소 로그인 : " + lm.getP().toString());
+					ChangePanel.replacePanel(mf, panel, new JungSo(mf, lm.getP())); 
+					break;
+				case 4 : 
+					lm.getP();
+					System.out.println("lm탈출빡빡 샘숭 로그인 : " + lm.getP().toString());
+					ChangePanel.replacePanel(mf, panel, new SamSung(mf, lm.getP())); 
+					break;
 				}
-			});
+				
+			}
+		});
+		
 		
 		JButton clickJoin = new JButton("회원가입");
 		clickJoin.setSize(280,34);
 		clickJoin.setLocation(458,676);
+		clickJoin.setBackground(Color.WHITE);
 		clickJoin.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		clickJoin.setBorder(null);
 		this.add(clickJoin);
@@ -106,10 +152,10 @@ public class LoginPage extends JPanel {
 		clickJoin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				ChangePanel change = new ChangePanel(mf, panel);
-				Join join = new Join(mf);
-				ChangePanel.replacePanel(mf,panel,join);
-//				change.replacePanel(join);
+				Join join = new Join();
+				join.createPlayer(mf,p);
+				ChangePanel.replacePanel(mf, panel, join);
+				
 			}
 		});
 		
@@ -129,6 +175,13 @@ public class LoginPage extends JPanel {
 		
 	}
 	
+	public Player getP() {
+		return p;
+	}
+
+	public void setP(Player p) {
+		this.p = p;
+	}
 	
 
 }

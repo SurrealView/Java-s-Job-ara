@@ -2,7 +2,7 @@
 2. 단어가 바뀔 시 앞글자는 대문자로 한다.^
 3. 예약어는 사용할 수 없다^$
 
-1. int nomber=1^;
+1. int nomber=1;^
 2. String class="1반";^
 3. char  gender='남';^$
 
@@ -30,9 +30,9 @@
 2. 산술연산자^
 3. 대입연산자^$
 
-1. 2^
-2. 3^
-3. 4^$
+1. ||^
+2. &&^
+3. ==^$
 
 1. a < = b? a++ : b- -;^
 2. a + b ? a++: b- -;^
@@ -123,9 +123,9 @@
 2.isParent^
 3.instanceOf^$
 
-1. Sonata 클래스의 move() 메소드가 실행된다.^
-2. Avante 클래스의 move() 메소드가 실행된다.^
-3. Car 클래스의 move() 메소드가 실행된다.^$
+1. 자동바인딩^
+2. 이동바인딩^
+3. 동적바인딩^$
 
 1. static final String IHG ="인효근";^
 2. void  sample(){}^
@@ -135,9 +135,9 @@
 2. public class StudentLee extends Princess,Prince implements Tired{}^
 3. public class StudentLee extends Princess,implements Tired{}^$
 
-1. 오버라이딩을 강제화^
-2. 객체 생성이 가능^
-3. 생성자를 통해 객체 생성 가능^$
+1. 생성자 통해 객체 생성 가능^
+2. 오버라이딩이 강제화 됨^
+3. 객체 생성이 가능^$
 
 1. 문자열 값을 수정할 수 없는 불변이다^
 2. 기본 16문자 크기로 지정된 버퍼를 이용하여 크기증가 가능^
@@ -179,9 +179,9 @@
 2. ArrayIndexOutOfBound Exception^
 3. Arithmetic Exception^$
 
-1.ArrayList^
-2.Vector^
-3.Properties^$
+1. Properties^
+2. Vector^
+3. ArrayList^$
 
 1.add^
 2.length^

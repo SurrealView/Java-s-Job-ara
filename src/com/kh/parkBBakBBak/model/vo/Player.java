@@ -1,25 +1,90 @@
 package com.kh.parkBBakBBak.model.vo;
 
+import java.util.Arrays;
+
+import javax.swing.JLabel;
+
 public class Player implements java.io.Serializable{
 	
+//	/**
+//	 * 
+//	 */
+	private static final long serialVersionUID = -9172491562312961541L;
+	
+	private int playerNumber;
 	private String userId;
-	private char[] userPwd;			// 비밀번호는 char[]로 저장 char[] pwd = {'u','s','e','r','0','1'};
-//	private String userNick;
+	private String userPwd;			
+	private String checkPwd;			
 	
 	private int day = 1;
-	private String[] weekDay = {"월","화","수","목","금","토","일"};
+	private String weekDay = "월";
 	private int hp = 5;
 	private int couponQTY = 0;
-	private int skillQTY = 0;
+	private int skillQTY = 10;
 	private boolean[] getSkill = {false, false, false, false, false, false, false, false, false, false};
-	private String career;
+	private String career = "무직";
+	private JLabel avatar;
+	private  int hidden= -1;
+	private  boolean hiddenEnd=false;
+	private int couponCount = 0 ;
+	private int pppppakk=0;
 	
+	public int getCouponCount() {
+		return couponCount;
+	}
+
+	public void setCouponCount(int couponCount) {
+		this.couponCount = couponCount;
+	}
+
+	public int getPppppakk() {
+		return pppppakk;
+	}
+
+	public void setPppppakk(int pppppakk) {
+		this.pppppakk = pppppakk;
+	}
+
+	public int getHidden() {
+		return hidden;
+	}
+
+	public void setHidden(int hidden) {
+		this.hidden = hidden;
+	}
+
+	public boolean isHiddenEnd() {
+		return hiddenEnd;
+	}
+
+	public void setHiddenEnd(boolean hiddenEnd) {
+		this.hiddenEnd = hiddenEnd;
+	}
+
 	public Player() {}
-	
-//	public Player(String userId, String userPwd, String userNick) {
-//		this.userId = userId;
-//		this.userPwd = userPwd;
-//	}
+
+	public Player(int playerNumber, String userId, String userPwd, String checkPwd, int day, String weekDay, int hp,
+			int couponQTY, int skillQTY, boolean[] getSkill, String career) {
+		this.playerNumber = playerNumber;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.checkPwd = checkPwd;
+		this.day = day;
+		this.weekDay = weekDay;
+		this.hp = hp;
+		this.couponQTY = couponQTY;
+		this.skillQTY = skillQTY;
+		this.getSkill = getSkill;
+		this.career = career;
+	}
+
+	@Override
+	public String toString() {
+		return "Player [playerNumber=" + playerNumber + ", userId=" + userId + ", userPwd=" + userPwd + ", checkPwd="
+				+ checkPwd + ", day=" + day + ", weekDay=" + weekDay + ", hp=" + hp + ", couponQTY="
+				+ couponQTY + ", skillQTY=" + skillQTY + ", getSkill=" + Arrays.toString(getSkill) + ", career="
+				+ career + "]";
+	}
 
 	public String getUserId() {
 		return userId;
@@ -29,21 +94,13 @@ public class Player implements java.io.Serializable{
 		this.userId = userId;
 	}
 
-	public char[] getUserPwd() {
+	public String getUserPwd() {
 		return userPwd;
 	}
 
-	public void setUserPwd(char[] userPwd) {
+	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
 	}
-
-//	public String getUserNick() {
-//		return userNick;
-//	}
-//
-//	public void setUserNick(String userNick) {
-//		this.userNick = userNick;
-//	}
 
 	public int getDay() {
 		return day;
@@ -53,11 +110,11 @@ public class Player implements java.io.Serializable{
 		this.day = day;
 	}
 
-	public String[] getWeekDay() {
+	public String getWeekDay() {
 		return weekDay;
 	}
 
-	public void setWeekDay(String[] weekDay) {
+	public void setWeekDay(String weekDay) {
 		this.weekDay = weekDay;
 	}
 
@@ -100,9 +157,57 @@ public class Player implements java.io.Serializable{
 	public void setCareer(String career) {
 		this.career = career;
 	}
+
+	public String getCheckPwd() {
+		return checkPwd;
+	}
+
+	public void setCheckPwd(String checkPwd) {
+		this.checkPwd = checkPwd;
+	}
+
+	public int getPlayerNumber() {
+		return playerNumber;
+	}
+
+	public void setPlayerNumber(int playerNumber) {
+		this.playerNumber = playerNumber;
+	}
+
+	public JLabel getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(JLabel avatar) {
+		this.avatar = avatar;
+	}
+
+//	public static long getSerialversionuid() {
+//		return serialVersionUID;
+//	}
 	
-	
-	
-	
+	public void changeWeekDay() {
+		
+		String[] weekDay = {"월","화","수","목","금","토","일"};
+		
+		if(getDay() < 8) {
+			setWeekDay(weekDay[getDay() - 1]); 
+		} else {
+			int a = getDay() % 7;
+			
+			switch(a) {
+			case 1 : setWeekDay(weekDay[0]); break;
+			case 2 : setWeekDay(weekDay[1]); break;
+			case 3 : setWeekDay(weekDay[2]); break;
+			case 4 : setWeekDay(weekDay[3]); break;
+			case 5 : setWeekDay(weekDay[4]); break;
+			case 6 : setWeekDay(weekDay[5]); break;
+			case 0 : setWeekDay(weekDay[6]); break;
+			}
+		}
+		
+
+		
+	}
 
 }
