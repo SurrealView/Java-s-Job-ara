@@ -18,6 +18,7 @@ import javax.swing.JTextArea;
 import com.kh.parkBBakBBak.controller.interview.InterviewManager;
 import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.ChangePanel;
+import com.kh.parkBBakBBak.view.WorldPanel;
 import com.kh.parkBBakBBak.view.academy.AcademyMain;
 import com.kh.parkBBakBBak.view.academy.testRoom.ShowQuestPage.MyMouseAdapter;
 import com.kh.parkBBakBBak.view.interview.SelectInterview;
@@ -28,6 +29,8 @@ public class TestChooseChapter extends JPanel {
 	private int buttonIndex;
 	private Player p;
 	private JButton goBack;
+	private JTextArea noticeBattery;
+	private boolean[] a = new boolean[10];
 
 	public TestChooseChapter(JFrame mf,Player p) {
 		this.p =p;
@@ -36,61 +39,60 @@ public class TestChooseChapter extends JPanel {
 
 		this.setLayout(null);
 		this.setBounds(0, 0, 1194, 834);
-		 JLabel batteryCase = new JLabel(new ImageIcon(new ImageIcon("images/batteryCase.png").getImage().getScaledInstance(140, 45, 0)));
-	       batteryCase.setSize(140,45);
-	      batteryCase.setLocation(40, 40);
-	       this.add(batteryCase);
-	       
-	       String[] remainBattery = new String[] { "Battery1.png", "Battery2.png", "Battery3.png", "Battery4.png", "Battery5.png" };
+		JLabel batteryCase = new JLabel(new ImageIcon(new ImageIcon("images/batteryCase.png").getImage().getScaledInstance(140, 45, 0)));
+		batteryCase.setSize(140,45);
+		batteryCase.setLocation(40, 40);
+		this.add(batteryCase);
 
-	       ArrayList<Image> batteryImage = new ArrayList<Image>();
-	       for (int i = 0; i < remainBattery.length; i++) {
-	          batteryImage.add(new ImageIcon(InterviewManager.ADDRESS + remainBattery[i]).getImage().getScaledInstance(140, 45, 0));
-	       }
+		String[] remainBattery = new String[] { "Battery1.png", "Battery2.png", "Battery3.png", "Battery4.png", "Battery5.png" };
 
-	       ArrayList<JLabel> batteryLabels = new ArrayList<JLabel>();
+		ArrayList<Image> batteryImage = new ArrayList<Image>();
+		for (int i = 0; i < remainBattery.length; i++) {
+			batteryImage.add(new ImageIcon(InterviewManager.ADDRESS + remainBattery[i]).getImage().getScaledInstance(140, 45, 0));
+		}
 
-	       if(p.getHp() != 0) {
-	       for (int i = 0; i < p.getHp(); i++) {
-	          batteryLabels.add(new JLabel(new ImageIcon(batteryImage.get(i))));
-	          batteryLabels.get(i).setSize(140, 45);
-	          batteryLabels.get(i).setLocation(40, 40);
-	          }
-	       
-	       for(int i = 0; i < this.p.getHp(); i++) {
-	          this.add(batteryLabels.get(i));
-	          }
-	       
-	       }
-	       this.add(batteryCase);
-	       
-	             
-	       JLabel smallCoffee = SelectInterview.addJLabelImage(new JLabel(), "coffeeSmall.png", 21, 40);
-	       smallCoffee.setSize(21, 40);
-	       smallCoffee.setLocation(200, 42);
-	       this.add(smallCoffee);
+		ArrayList<JLabel> batteryLabels = new ArrayList<JLabel>();
 
-	       JLabel couponQty = new JLabel(" X " + p.getCouponQTY());
-	       couponQty.setFont(new Font("맑은 고딕", Font.PLAIN, 24));
-	       couponQty.setForeground(Color.WHITE);
-	       couponQty.setSize(50, 40);
-	       couponQty.setLocation(220, 40);
-	      this.add(couponQty);
-	      
-	      JLabel dayWeekDay = new JLabel(p.getDay() + "일차" + " / " + p.getWeekDay() + "요일");
-	      dayWeekDay.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-	      dayWeekDay.setForeground(Color.WHITE);
-	      dayWeekDay.setSize(150, 40);
-	      dayWeekDay.setLocation(280, 41);
-	      this.add(dayWeekDay);
-	      
-	      
-	      JLabel infoBox = new JLabel();
-	      infoBox.setSize(403,65);
-	      infoBox.setLocation(30,30);
-	      infoBox.setOpaque(true);
-	      infoBox.setBackground(new Color (0,0,0,150));
-	      this.add(infoBox);
+		if(p.getHp() != 0) {
+			for (int i = 0; i < p.getHp(); i++) {
+				batteryLabels.add(new JLabel(new ImageIcon(batteryImage.get(i))));
+				batteryLabels.get(i).setSize(140, 45);
+				batteryLabels.get(i).setLocation(40, 40);
+			}
+
+			for(int i = 0; i < this.p.getHp(); i++) {
+				this.add(batteryLabels.get(i));
+			}
+
+		}
+		this.add(batteryCase);
+
+
+		JLabel smallCoffee = SelectInterview.addJLabelImage(new JLabel(), "coffeeSmall.png", 21, 40);
+		smallCoffee.setSize(21, 40);
+		smallCoffee.setLocation(200, 42);
+		this.add(smallCoffee);
+
+		JLabel couponQty = new JLabel(" X " + p.getCouponQTY());
+		couponQty.setFont(new Font("맑은 고딕", Font.PLAIN, 24));
+		couponQty.setForeground(Color.WHITE);
+		couponQty.setSize(50, 40);
+		couponQty.setLocation(220, 40);
+		this.add(couponQty);
+
+		JLabel dayWeekDay = new JLabel(p.getDay() + "일차" + " / " + p.getWeekDay() + "요일");
+		dayWeekDay.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		dayWeekDay.setForeground(Color.WHITE);
+		dayWeekDay.setSize(150, 40);
+		dayWeekDay.setLocation(280, 41);
+		this.add(dayWeekDay);
+
+		JLabel infoBox = new JLabel();
+		infoBox.setSize(403,65);
+		infoBox.setLocation(30,30);
+		infoBox.setOpaque(true);
+		infoBox.setBackground(new Color (0,0,0,150));
+		this.add(infoBox);
 
 		goBack = new JButton(new ImageIcon(new ImageIcon("images/backButton.png").getImage().getScaledInstance(60, 60, 0)));
 		goBack.setBounds(1100, 15, 60, 60);
@@ -121,9 +123,19 @@ public class TestChooseChapter extends JPanel {
 		smallChatLb.setLayout(null);
 		smallChatLb.setBounds(110, 266, 954, 302);
 
-		JTextArea noticeBattery = new JTextArea("시험을 시작합니다.\n배터리가 1 감소합니다.");
+		//이미 습득한 챕터인지 확인(플레이어 객체가 습득한 스킬 확인)
+		a = p.getGetSkill();
+		
+		noticeBattery = new JTextArea();
+		if(p.getHp() > 0) {
+			noticeBattery.setText("시험을 시작합니다.\n배터리가 1 감소합니다.");
+		} else if(p.getHp() <= 0) {
+			noticeBattery.setText("배터리가 부족합니다.\n메인화면으로 돌아갑니다.");
+		}
+
+		
 		noticeBattery.setFont(new Font("맑은 고딕", Font.BOLD, 35));
-		noticeBattery.setBounds(130, 100, 400, 150);
+		noticeBattery.setBounds(130, 100, 400, 200);
 		noticeBattery.setOpaque(false);
 		smallChatLb.add(noticeBattery);
 
@@ -170,11 +182,16 @@ public class TestChooseChapter extends JPanel {
 							//buttonIndex 값 설정
 							String temp = chapterButton.get(i).getName().charAt(0) + "";
 							buttonIndex = Integer.parseInt(temp);
+							
+							if(a[buttonIndex] == true) {
+								noticeBattery.setText("이미 습득한 챕터입니다.\n메인화면으로 돌아갑니다.");
+							}
 
 							TestChooseChapter.remove(blackBoardLb);
 							TestChooseChapter.repaint();
 							TestChooseChapter.addMouseListener(new MyMouseAdapter());
 						}
+						
 					}
 
 				}
@@ -197,7 +214,6 @@ public class TestChooseChapter extends JPanel {
 
 				}
 			});
-
 		}
 	}
 
@@ -205,11 +221,15 @@ public class TestChooseChapter extends JPanel {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if(e.getSource() == goBack) {
+			if(e.getSource() == goBack || a[buttonIndex] == true) {
 				ChangePanel.replacePanel(mf, TestChooseChapter,new AcademyMain(mf, p)); 
 			} else {
-				p.setHp(p.getHp() - 1);
-				ChangePanel.replacePanel(mf, TestChooseChapter,new ShowQuestPage(mf, p, buttonIndex)); 
+				if(p.getHp() > 0) {
+					p.setHp(p.getHp() - 1);
+					ChangePanel.replacePanel(mf, TestChooseChapter,new ShowQuestPage(mf, p, buttonIndex)); 
+				} else if(p.getHp() <= 0) {
+					ChangePanel.replacePanel(mf, TestChooseChapter,new WorldPanel(mf, p)); 
+				}
 			}
 		}
 	}

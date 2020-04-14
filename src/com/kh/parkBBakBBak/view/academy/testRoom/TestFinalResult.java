@@ -114,6 +114,7 @@ public class TestFinalResult extends JPanel {
 			a = p.getGetSkill();
 			a[buttonIndex] = true;
 			p.setGetSkill(a);
+			p.setSkillQTY(p.getSkillQTY() + 1);
 			
 			testResult.setText("축하합니다!" + "\n" + chapter[buttonIndex] + "스킬을 획득하셨습니다.");
 			testResult.setBounds(250, 355, 400, 400);
@@ -122,6 +123,7 @@ public class TestFinalResult extends JPanel {
 				testResult.setText("축하합니다! "+ chapter[buttonIndex] + "스킬을 획득하셨습니다.\n모든 문제를 맞춘 당신! 자바마스터의 선물이 도착했습니다.\n커피쿠폰 + 1");
 				testResult.setBounds(250, 335, 700, 400);
 				p.setCouponQTY(p.getCouponQTY() + 1);
+				
 			}
 		} else if (answerCount < 4) {
 			testResult.setBounds(250, 335, 400, 400);
