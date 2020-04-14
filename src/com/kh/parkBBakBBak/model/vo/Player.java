@@ -20,7 +20,7 @@ public class Player implements java.io.Serializable{
 	private String weekDay = "¿ù";
 	private int hp = 5;
 	private int couponQTY = 0;
-	private int skillQTY = 10;
+	private int skillQTY = 0;
 	private boolean[] getSkill = {false, false, false, false, false, false, false, false, false, false};
 	private String career = "¹«Á÷";
 	private JLabel avatar;
