@@ -132,6 +132,9 @@ public class LectureMain extends JPanel {
 		JButton buttonBack = new JButton(new ImageIcon(iconBack));
 		buttonBack.setSize(60, 60);
 		buttonBack.setLocation(1100,15);
+		buttonBack.setBorderPainted(false);
+		buttonBack.setContentAreaFilled(false);
+		buttonBack.setFocusPainted(false);
 		this.add(buttonBack);
 		buttonBack.addActionListener(new ActionListener(){
 
