@@ -266,7 +266,7 @@ public class BackgroundPanel extends JPanel {
 							u.setHp(u.getHp() - 1);
 							u.setCouponQTY(u.getCouponQTY() - 1);
 						} else if (random == 2) {
-							ta3.setText("흑당마라민트초코를 마시고\n체력이 4 회복되었습니다\n쿠폰이 1 감소합니다");
+							ta3.setText("흑당마라민트초코를 마시고\n체력이 2 감소되었습니다\n쿠폰이 1 감소합니다");
 							u.setHp(u.getHp() - 2);
 							u.setCouponQTY(u.getCouponQTY() - 1);
 						} else if (random == 3 || random == 4 || random == 5) {
@@ -290,7 +290,7 @@ public class BackgroundPanel extends JPanel {
 						if (u.getHp() < 0) {
 							u.setHp(0);
 						}
-						ta3.setText("당신의 체력은 " + u.getHp() + "가 되었고 ,\n쿠폰은 " + u.getCouponQTY() + "개 남았습니다.");
+						ta3.setText("빡빡의 체력은 " + u.getHp() + "가 되었고 ,\n쿠폰은 " + u.getCouponQTY() + "개 남았습니다.");
 						num3++;
 					} else {
 						num3 = 0;
@@ -331,8 +331,8 @@ public class BackgroundPanel extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "				오늘의 메뉴판\n\n1.달고나 명란마요 쉐이크 : 배터리 1 감소        "
-						+ "\n\n2.아이스 아메리카노 : 배터리 1 회복        \n\n3.아이스 카페라떼 : 배터리 2 회복        \n\n4.아이스 바닐라라떼 : 배터리 3 회복        \n\n5.흑당마라민트초코쉐이크 : 배터리 4 회복      \n ",
+				JOptionPane.showMessageDialog(null, "				오늘의 메뉴판\n\n1.흑당마라민트초코쉐이크 : 배터리 2 감소        "
+						+ " \n\n2.달고나 명란마요 쉐이크 : 배터리 1 감소        \n\n3.아이스 아메리카노 : 배터리 1 회복        \n\n4.아이스 카페라떼 : 배터리 2 회복        \n\n5.아이스 바닐라라떼 : 배터리 3 회복             \n ",
 						"오늘의 메뉴^.^", 1);
 
 			}
