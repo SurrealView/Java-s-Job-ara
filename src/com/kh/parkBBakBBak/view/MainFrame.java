@@ -18,7 +18,7 @@ public class MainFrame {
 //		mainFrame.setLocation(0, 0);
 		mainFrame.setLocationRelativeTo(null);// 창이 가운데 나오게
 		mainFrame.setTitle("자바를 잡아라");
-
+		
 		File file = new File("sounds/intro.wav");
 
 		try {
@@ -35,7 +35,7 @@ public class MainFrame {
 			e.printStackTrace();
 		}
 
-//		mainFrame.setResizable(false);// 창의 크기를 변경하지 못하게
+		mainFrame.setResizable(false);// 창의 크기를 변경하지 못하게
 
 		mainFrame.add(new MenuPanel(mainFrame));
 //	    mainFrame.setLocationRelativeTo(null);
