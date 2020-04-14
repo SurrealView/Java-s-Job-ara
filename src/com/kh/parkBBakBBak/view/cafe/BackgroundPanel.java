@@ -45,7 +45,6 @@ public class BackgroundPanel extends JPanel{
    JTextArea ta2;
    JTextArea ta3;
    JTextArea forTM;
-   public static Clip cafeBgm;
 
    public static int pppppakk=0;
    int num2 = 0;
@@ -61,23 +60,7 @@ public class BackgroundPanel extends JPanel{
       MenuPanel.mainBgm.stop();
       
       this.setLayout(null);
-      
-      
-     AudioInputStream audioInputStream;
-   File file;
-   try {
-      file = new File("sounds/Lounge Lizard.wav");
-      audioInputStream = AudioSystem.getAudioInputStream(file);
-      cafeBgm = AudioSystem.getClip();
-      cafeBgm.open(audioInputStream);
-      cafeBgm.start();
-      cafeBgm.loop(cafeBgm.LOOP_CONTINUOUSLY);
-   } catch (UnsupportedAudioFileException | IOException e) {
-      e.printStackTrace();
-   } catch (LineUnavailableException e) {
-      e.printStackTrace();
-   }
-   
+ 
       
      
       System.out.println("카페입장");
@@ -250,7 +233,8 @@ public class BackgroundPanel extends JPanel{
                 num4=0;
                  
                 System.out.println("카페 아웃1");
-                cafeBgm.stop();
+
+                WorldPanel.cafeBgm.stop();
                 ChangePanel.replacePanel(mf, panel, new WorldPanel(mf,u));
                 }
          }
@@ -344,7 +328,7 @@ public class BackgroundPanel extends JPanel{
                }else {
                num4=0;
                System.out.println("카페 아웃2");
-               cafeBgm.stop();
+               WorldPanel.cafeBgm.stop();
                ChangePanel.replacePanel(mf, panel, new WorldPanel(mf,u));
                }
             }
@@ -410,7 +394,7 @@ public class BackgroundPanel extends JPanel{
       @Override
       public void mouseClicked(MouseEvent e) {
          System.out.println("카페 아웃3");
-         cafeBgm.stop();
+         WorldPanel.cafeBgm.stop();
          ChangePanel.replacePanel(mf, panel, new WorldPanel(mf,u));
          
       }

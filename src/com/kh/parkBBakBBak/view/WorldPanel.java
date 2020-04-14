@@ -7,9 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -41,6 +47,8 @@ public class WorldPanel extends JPanel {
 	private Icon standRight;
 	private int charCnt = 0;
 	private Player p;
+	
+	public static Clip cafeBgm;
 
 	public WorldPanel(JFrame mf, Player p) {
 
@@ -144,6 +152,22 @@ public class WorldPanel extends JPanel {
 			}
 		});
 
+	     
+	   //카페 bgm   
+	   AudioInputStream audioInputStream;
+	   File file;
+	   try {
+	      file = new File("sounds/Lounge Lizard.wav");
+	      audioInputStream = AudioSystem.getAudioInputStream(file);
+	      cafeBgm = AudioSystem.getClip();
+	      cafeBgm.open(audioInputStream);
+	   } catch (UnsupportedAudioFileException | IOException e) {
+	      e.printStackTrace();
+	   } catch (LineUnavailableException e) {
+	      e.printStackTrace();
+	   }
+	   
+		
 		
 		mf.addKeyListener(new MyKeyListener());
 		p.setAvatar(avatar);
@@ -154,41 +178,6 @@ public class WorldPanel extends JPanel {
 
 	}
 
-	/*
-	 * public void bgmPlay() {
-	 * 
-	 * File bgm = new File("sounds/kkHouse.wav"); AudioInputStream stream;
-	 * AudioFormat format; DataLine.Info info;
-	 * 
-	 * try { // 파일을 가져와서 AudioSystem을 통해 InputStream에 넣음 stream =
-	 * AudioSystem.getAudioInputStream(bgm);
-	 * 
-	 * // 파일이 저장된 스트림에서 오디오 형식을 가져와 해당 오디오의 정보 오브젝트를 구축 format = stream.getFormat();
-	 * info = new DataLine.Info(Clip.class, format);
-	 * 
-	 * // 오디오 정보 오브젝트의 정보를 읽음 clip = (Clip) AudioSystem.getLine(info);
-	 * 
-	 * // clip을 통해 음악파일을 불러옴 clip.open(stream);
-	 * 
-	 * // 음량조절 FloatControl gainControl = (FloatControl)
-	 * clip.getControl(FloatControl.Type.MASTER_GAIN); gainControl.setValue(-20.0f);
-	 * 
-	 * 
-	 * // clip실행 clip.start(); } catch (Exception e) { } }
-	 * 
-	 * // 스레드 : 배경음악 반복재생, 이동음 처리 public void run() {// 이동 시 음악 재생용 스레드 while (true)
-	 * { try { // 배경음악이 끝까지 재생되면, 배경음악실행 메소드를 다시실행 if (clip.getFrameLength() ==
-	 * clip.getFramePosition()) bgmPlay();
-	 * 
-	 * // 이동음 처리 // chk는 방향키를 눌렀을때 증가. // 이동음이 끝날때 감소
-	 * 
-	 * if (chk > 0) { movingSnd(sel); // 이동음을 상세컨트롤(중복재생컨트롤) thread.notify(); //
-	 * 재생횟수 0 이상일 시 재생 시작 if (chk > 10) chk = 10; // 이동음 재생횟수 많을 시 제한. } else {
-	 * thread.wait(); // 재생 횟수 0 일때 재생 중지 }
-	 * 
-	 * } catch (Exception e) { } } }
-	 * 
-	 */
 	class MyKeyListener implements KeyListener {
 
 		@Override
@@ -216,39 +205,33 @@ public class WorldPanel extends JPanel {
 			// 카페
 			if (avatar.getX() >= 355 && avatar.getX() <= 370)
 				if (avatar.getY() >= 100 && avatar.getY() <= 100) {
-//								System.out.println("출력");
-//					p.setAvatar(avatar);
 					avatar.setLocation(1500, 1500);
+
+				    cafeBgm.start();
+				    cafeBgm.loop(cafeBgm.LOOP_CONTINUOUSLY);
 					BackgroundPanel cafe = new BackgroundPanel(mf, p);
 					ChangePanel.replacePanel(mf, panel, cafe);
-
-//					panel.setSize(0, 0);
-//					ChangePanel.replacePanel(mf, panel, 1, p);
-
 				}
+			
 			// 역
 			if (avatar.getX() >= 820 && avatar.getX() <= 830)
 				if (avatar.getY() >= 550 && avatar.getY() <= 550) {
-//								System.out.println("출력");
 					avatar.setLocation(avatar.getX(), avatar.getY() + 100);
-//					p.setAvatar(avatar);
 					avatar.setLocation(1500, 1500);
 					HomePanel home = new HomePanel(mf, p);
 					ChangePanel.replacePanel(mf, panel, home);
-//					ChangePanel.worldToPlace(panel, cafe2);
 				}
+			
 			// 인터뷰 장소
 			if (avatar.getX() >= 850 && avatar.getX() <= 860)
 				if (avatar.getY() >= 100 && avatar.getY() <= 100) {
 					mf.remove(panel);
 					mf.repaint();
-//								System.out.println("출력");
 					avatar.setLocation(avatar.getX(), avatar.getY() + 100);
 					p.setAvatar(avatar);
 					avatar.setLocation(1500, 1500);
 					SelectInterview interview = new SelectInterview(mf, p);
 					ChangePanel.replacePanel(mf, panel, interview);
-//					ChangePanel.replacePanel(mf, panel, 2, p);
 				}
 
 			// 테스트용 : 캐릭터의 맨 왼쪽 위 기준 x/y좌표
