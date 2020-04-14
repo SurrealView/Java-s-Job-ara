@@ -126,7 +126,10 @@ public class SelectInterview extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				if(!(p.getWeekDay().equals("토")||p.getWeekDay().equals("일"))) {
+					JOptionPane.showMessageDialog(mf, "평일입니다! 주말에오세요", "오늘은 쉽니다", JOptionPane.WARNING_MESSAGE);
+				}
+				else {
 				if (5 <= p.getSkillQTY()) {
 					InterviewManager.WhatInterview = 1;
 					System.out.println("중소중소");
@@ -138,6 +141,7 @@ public class SelectInterview extends JPanel {
 					JOptionPane.showMessageDialog(mf, "스킬이 부족합니다!", "더 배워오세요", JOptionPane.WARNING_MESSAGE);
 
 				}
+				}
 
 			}
 
@@ -147,6 +151,10 @@ public class SelectInterview extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if(!(p.getWeekDay().equals("토")||p.getWeekDay().equals("일"))) {
+					JOptionPane.showMessageDialog(mf, "평일입니다! 주말에오세요", "오늘은 쉽니다", JOptionPane.WARNING_MESSAGE);
+				}
+				else {
 				if (8 <= p.getSkillQTY()) {
 					InterviewManager.WhatInterview = 2;
 					System.out.println("샘송샘송");
@@ -159,6 +167,7 @@ public class SelectInterview extends JPanel {
 
 				}
 			}
+			}
 		});
 
 		if (p.getHidden() == 0) {
@@ -167,11 +176,15 @@ public class SelectInterview extends JPanel {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-
+					if(!(p.getWeekDay().equals("토")||p.getWeekDay().equals("일"))) {
+						JOptionPane.showMessageDialog(mf, "평일입니다! 주말에오세요", "오늘은 쉽니다", JOptionPane.WARNING_MESSAGE);
+					}
+					else {
 					InterviewManager.WhatInterview = 3;
 					System.out.println("페북페북");
 
 					ChangePanel.replacePanel(mf, panel, new SmallIntroduce1(mf, p));
+				}
 				}
 			});
 		}
