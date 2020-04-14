@@ -25,21 +25,23 @@ import com.kh.parkBBakBBak.view.academy.testRoom.TestMainPage;
 import com.kh.parkBBakBBak.view.interview.SelectInterview;
 
 public class AcademyMain extends JPanel{
-	
+
 	private JFrame mf;
 	private JPanel academyMain;
 	private JButton testRoom;
 	private Player p;
 	private JButton goBack;
-	
+
 	public AcademyMain(JFrame mf,Player p) {
 		this.mf = mf;
 		this.academyMain = this;
 		this.p=p;
-		
+
 		this.setLayout(null);
 		this.setBounds(0, 0, 1194, 834);
-		
+
+
+
 		goBack = new JButton(new ImageIcon(new ImageIcon("images/backButton.png").getImage().getScaledInstance(60, 60, 0)));
 		goBack.setBounds(1100, 15, 60, 60);
 		goBack.setOpaque(false);
@@ -48,75 +50,77 @@ public class AcademyMain extends JPanel{
 		goBack.addMouseListener(new MyMouseAdapter());
 		this.add(goBack);
 		JLabel batteryCase = new JLabel(new ImageIcon(new ImageIcon("images/batteryCase.png").getImage().getScaledInstance(140, 45, 0)));
-	       batteryCase.setSize(140,45);
-	      batteryCase.setLocation(40, 40);
-	       this.add(batteryCase);
-	       
-	       String[] remainBattery = new String[] { "Battery1.png", "Battery2.png", "Battery3.png", "Battery4.png", "Battery5.png" };
+		batteryCase.setSize(140,45);
+		batteryCase.setLocation(40, 40);
+		this.add(batteryCase);
 
-	       ArrayList<Image> batteryImage = new ArrayList<Image>();
-	       for (int i = 0; i < remainBattery.length; i++) {
-	          batteryImage.add(new ImageIcon(InterviewManager.ADDRESS + remainBattery[i]).getImage().getScaledInstance(140, 45, 0));
-	       }
+		String[] remainBattery = new String[] { "Battery1.png", "Battery2.png", "Battery3.png", "Battery4.png", "Battery5.png" };
 
-	       ArrayList<JLabel> batteryLabels = new ArrayList<JLabel>();
+		ArrayList<Image> batteryImage = new ArrayList<Image>();
+		for (int i = 0; i < remainBattery.length; i++) {
+			batteryImage.add(new ImageIcon(InterviewManager.ADDRESS + remainBattery[i]).getImage().getScaledInstance(140, 45, 0));
+		}
 
-	       if(p.getHp() != 0) {
-	       for (int i = 0; i < p.getHp(); i++) {
-	          batteryLabels.add(new JLabel(new ImageIcon(batteryImage.get(i))));
-	          batteryLabels.get(i).setSize(140, 45);
-	          batteryLabels.get(i).setLocation(40, 40);
-	          }
-	       
-	       for(int i = 0; i < this.p.getHp(); i++) {
-	          this.add(batteryLabels.get(i));
-	          }
-	       
-	       }
-	       this.add(batteryCase);
-	       
-	             
-	       JLabel smallCoffee = SelectInterview.addJLabelImage(new JLabel(), "coffeeSmall.png", 21, 40);
-	       smallCoffee.setSize(21, 40);
-	       smallCoffee.setLocation(200, 42);
-	       this.add(smallCoffee);
+		ArrayList<JLabel> batteryLabels = new ArrayList<JLabel>();
 
-	       JLabel couponQty = new JLabel(" X " + p.getCouponQTY());
-	       couponQty.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 24));
-	       couponQty.setForeground(Color.WHITE);
-	       couponQty.setSize(50, 40);
-	       couponQty.setLocation(220, 40);
-	      this.add(couponQty);
-	      
-	      JLabel dayWeekDay = new JLabel(p.getDay() + "¿œ¬˜" + " / " + p.getWeekDay() + "ø‰¿œ");
-	      dayWeekDay.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 20));
-	      dayWeekDay.setForeground(Color.WHITE);
-	      dayWeekDay.setSize(150, 40);
-	      dayWeekDay.setLocation(280, 41);
-	      this.add(dayWeekDay);
-	      
-	      
-	      JLabel infoBox = new JLabel();
-	      infoBox.setSize(403,65);
-	      infoBox.setLocation(30,30);
-	      infoBox.setOpaque(true);
-	      infoBox.setBackground(new Color (0,0,0,150));
-	      this.add(infoBox);
+		if(p.getHp() != 0) {
+			for (int i = 0; i < p.getHp(); i++) {
+				batteryLabels.add(new JLabel(new ImageIcon(batteryImage.get(i))));
+				batteryLabels.get(i).setSize(140, 45);
+				batteryLabels.get(i).setLocation(40, 40);
+			}
+
+			for(int i = 0; i < this.p.getHp(); i++) {
+				this.add(batteryLabels.get(i));
+			}
+
+		}
+		this.add(batteryCase);
+
+
+		JLabel smallCoffee = SelectInterview.addJLabelImage(new JLabel(), "coffeeSmall.png", 21, 40);
+		smallCoffee.setSize(21, 40);
+		smallCoffee.setLocation(200, 42);
+		this.add(smallCoffee);
+
+		JLabel couponQty = new JLabel(" X " + p.getCouponQTY());
+		couponQty.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 24));
+		couponQty.setForeground(Color.WHITE);
+		couponQty.setSize(50, 40);
+		couponQty.setLocation(220, 40);
+		this.add(couponQty);
+
+		JLabel dayWeekDay = new JLabel(p.getDay() + "¿œ¬˜" + " / " + p.getWeekDay() + "ø‰¿œ");
+		dayWeekDay.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 20));
+		dayWeekDay.setForeground(Color.WHITE);
+		dayWeekDay.setSize(150, 40);
+		dayWeekDay.setLocation(280, 41);
+		this.add(dayWeekDay);
+
+		JLabel infoBox = new JLabel();
+		infoBox.setSize(403,65);
+		infoBox.setLocation(30,30);
+		infoBox.setOpaque(true);
+		infoBox.setBackground(new Color (0,0,0,150));
+		this.add(infoBox);
+
 		Image background = new ImageIcon("images/classroom.png").getImage().getScaledInstance(1194, 834, 0);
 		JLabel backgroundLb = new JLabel(new ImageIcon(background));
 		backgroundLb.setBounds(0, 0, 1194, 834);
-		
+
 		Image chat = new ImageIcon("images/txtarea2.png").getImage().getScaledInstance(820, 270, 0);
 		JLabel chatLb = new JLabel(new ImageIcon(chat));
 		chatLb.setLayout(null);
 		chatLb.setBounds(180, 520, 820, 270);
-		
+
 		JTextArea userChat = new JTextArea("¥ ¡ˆ æ ∞‘ «–ø¯ø° µµ¬¯«ﬂ±∫! ¿Ã¡¶ ππ«“±Ó?");
 		userChat.setBounds(235, 570, 500, 57);
 		userChat.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 24));
 		userChat.setOpaque(false);
 		this.add(userChat);
-		
+
+
+
 		JButton lecture = new JButton("1. ∞≠¿«Ω«ø°º≠ ºˆæ˜¿ª µË¥¬¥Ÿ.");
 		lecture.setBounds(215, 620, 500, 57);
 		lecture.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 22));
@@ -125,7 +129,7 @@ public class AcademyMain extends JPanel{
 		lecture.setOpaque(false);
 		lecture.setHorizontalAlignment(lecture.LEFT);
 		this.add(lecture);
-		
+
 		testRoom = new JButton("2. Ω√«Ë¿Âø°º≠ Ω√«Ë¿ª ∫ª¥Ÿ.(πË≈Õ∏Æ 1 ∞®º“)");
 		testRoom.setBounds(215, 675, 500, 57);
 		testRoom.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 22));
@@ -133,44 +137,51 @@ public class AcademyMain extends JPanel{
 		testRoom.setContentAreaFilled(false);
 		testRoom.setOpaque(false);
 		testRoom.setHorizontalAlignment(lecture.LEFT);
-		
+
+		if(p.getWeekDay().equals("≈‰") || p.getWeekDay().equals("¿œ")) {
+			this.remove(lecture);
+			testRoom.setVisible(false);
+			this.repaint();
+			chatLb.setBounds(190, 250, 820, 270);
+			userChat.setText("¡÷∏ªø°¥¬ øÓøµ«œ¡ˆ æ Ω¿¥œ¥Ÿ.\n¡÷∏ª ¿ÃøÎ ∞°¥… ƒ¡≈Ÿ√˜ : ∏È¡¢¿Â, ƒ´∆‰");
+			userChat.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 22));
+			userChat.setBounds(245, 360, 1000, 1000);
+		}
+
 		this.add(testRoom);
 		this.add(chatLb);
 		this.add(backgroundLb);
-		
+
 		mf.add(this);
-		
+
 		System.out.println(p.toString());
-		
+
 		testRoom.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				TestMainPage tm = new TestMainPage(mf,p);
 				ChangePanel.replacePanel(mf, academyMain, tm); 
-
-				
-				
 			}
 		});
 		lecture.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ChangePanel.replacePanel(mf, academyMain, new LectureMain(mf,p));
-				
+
 			}
 		});
 	}
-	
+
 	class MyMouseAdapter extends MouseAdapter {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			if(e.getSource() == goBack) {
 				ChangePanel.replacePanel(mf, academyMain, new WorldPanel(mf, p)); 
-			
 			}
+
 		}
 	}
 }
