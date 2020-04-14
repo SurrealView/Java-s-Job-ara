@@ -153,7 +153,7 @@ public class SmallIntroduce2 extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 
 				System.out.println("다음화면");
-				if(p.getHp()>2) {
+				if(p.getHp()>1) {
 					
 					p.setHp(p.getHp()-2);
 					ChangePanel.replacePanel(mf, panel, new DropQuestion(mf,p));
