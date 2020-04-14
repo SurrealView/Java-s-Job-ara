@@ -25,7 +25,7 @@ public class SoundAndInputPanel extends JPanel {
 
 		int x = mf.getWidth();
 		int y = mf.getHeight();
-		
+
 		JLabel background = new JLabel(
 				new ImageIcon(new ImageIcon("images/settingBgd.png").getImage().getScaledInstance(1194, 834, 0)));
 		background.setBounds(0, 0, 1194, 834);
@@ -40,7 +40,7 @@ public class SoundAndInputPanel extends JPanel {
 				// ChangePanel.replacePanel(mf, panel, new SmallIntroduce1(mf));
 			}
 		});
-		
+
 		JButton settingButton = SelectInterview.addJButtonImage(new JButton(), "soundButton.png", 100, 100);
 		settingButton.setLocation(x / 2 - 100 / 2, (y / 2 - (100 / 2 + 100)));
 		settingButton.addActionListener(new ActionListener() {
@@ -55,22 +55,27 @@ public class SoundAndInputPanel extends JPanel {
 		infoButton.setLocation(x / 2 - 72 / 2, y / 2);
 		infoButton.addActionListener(new ActionListener() {
 
-	         @Override
-	         public void actionPerformed(ActionEvent e) {
-	        	
-	            String cheat = "자라나라 머리머리";
-	            InputDialog input = new InputDialog();
-	            String result = input.Dialog();
-	            if(result.equals(cheat)) {
-	               boolean skills[] = { true, true, true, true, true, true, true, true, true, true };
-	               JOptionPane.showMessageDialog(mf, "플레이어 습득 스킬이 10이됩니다!", "치트 성공!", JOptionPane.WARNING_MESSAGE);
-	               
-	               p.setGetSkill(skills);
-	               p.setSkillQTY(10);
-	            }
-	         }
-	      });
-		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				String cheat = "자라나라 머리머리";
+				try {
+					InputDialog input = new InputDialog();
+					String result = input.Dialog();
+					if (result.equals(cheat)) {
+						boolean skills[] = { true, true, true, true, true, true, true, true, true, true };
+						JOptionPane.showMessageDialog(mf, "플레이어 습득 스킬이 10이됩니다!", "치트 성공!", JOptionPane.WARNING_MESSAGE);
+
+						p.setGetSkill(skills);
+						p.setSkillQTY(10);
+					}
+
+				} catch (NullPointerException except) {
+					System.out.println("취소");
+				}
+			}
+		});
+
 		this.add(backButton);
 		this.add(settingButton);
 		this.add(infoButton);

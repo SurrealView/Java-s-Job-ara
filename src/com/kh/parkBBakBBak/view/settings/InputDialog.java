@@ -16,7 +16,5 @@ public class InputDialog {
       
       String str = input.showInputDialog("입력할 사항은?");
       return str;
-
    }
-
 }
