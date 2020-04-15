@@ -6,9 +6,7 @@ Choose the wrong one about the casting.$
 Choose the correct sentence using the operator.$
 Choose the operator that is incorrectly connected.$
 Choose the first of the following operations to be processed.$
-What does the question and answer match?
-int num = 1; int result = ++num; result += (num++ - 1);
-System.out.println(result);$
+Which logical operator returns true when both the a and b conditional expressions are true?$
 Choose the wrong expression as the triad operator.$
 Which sentence falls into infinite loop?$
 What is not a feature of an IF?$
@@ -27,13 +25,12 @@ What is true about the Constructor?$
 Which variable is stored in the static area and has a static keyword?$
 What is true about inheritance?$
 What is the name of the top class of all classes?$
-Choose the correct words for the next blank.
-You can change the method's original function by using the method provided by the Object class ( ).$
+What changes the method provided by Object Class to allow it to function differently?$
 Choose the correct one for override.$
 Choose a word that has a different meaning from the upper class.$
 Which operator do you use to determine which class type of object address a reference variable is referring to?$
 What are the results of the execution?
-Car sonata = new Sonate();Car avante = new Avante();so.move();//Move() was written inheriting the move() method of the Car class.$
+What is the term that means binding by object type when compiling when polymorphism is applied?$
 What's the wrong sentence?$
 What's the wrong sentence?$
 Which of the following is true about abstract classes?$
