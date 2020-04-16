@@ -21,6 +21,7 @@ import com.kh.parkBBakBBak.controller.interview.InterviewManager;
 import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.ChangePanel;
 import com.kh.parkBBakBBak.view.WorldPanel;
+import com.kh.parkBBakBBak.view.TestRoomMiniGame.FindButtonGame;
 import com.kh.parkBBakBBak.view.interview.SelectInterview;
 
 public class HomeSave extends JPanel {
@@ -129,6 +130,7 @@ public class HomeSave extends JPanel {
 				SaveManager sm = new SaveManager();
 				sm.deleteData(p);
 				sm.savePlayer();
+				FindButtonGame.playCount = 0;
 				System.out.println("saveÈ­¸éÀ¸·Î ²¨³»´Â°Ô ¼º°øµÈ ºýºý" + sm.savePlayer().toString());
 				
 				ChangePanel.replacePanel(mf, hs, new SaveComplete(mf, p));

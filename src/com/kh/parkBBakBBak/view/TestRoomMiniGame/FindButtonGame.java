@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -27,6 +28,7 @@ public class FindButtonGame extends JPanel {
 	private JButton start;
 	private JButton restart;
 	public static int index = 0;
+	public static int playCount;		//1일 게임 실행 횟수 체크
 
 	public FindButtonGame(JFrame mf, Player p) {
 
@@ -104,37 +106,41 @@ public class FindButtonGame extends JPanel {
 			if(e.getSource() == goBack) {
 				ChangePanel.replacePanel(mf, FindButtonGame,new TestMainPage(mf, p)); 
 			}
-			for(int i = 0; i < 20; i++) {
-				if(index == i && e.getSource() == numberButton.get(i)) {
-					FindButtonGame.remove(numberButton.get(i));
-					FindButtonGame.repaint();
-					index++;
-					System.out.println("게임화면 index : " + index);
-					if(index == 20) {
-						ChangePanel.replacePanel(mf, FindButtonGame,new MiniGameResult(mf, p)); 
-					}
-				}
 
-				if(e.getSource() == start) {
-					numberButton.get(i).setVisible(true);
-					
-					if(i == 0) {
-						Timer timer = new Timer(mf, FindButtonGame, p);
-						Thread t1 = timer;
-						t1.setDaemon(true);
-						t1.start();
+			if(playCount == 0) {
+				for(int i = 0; i < 20; i++) {
+					if(index == i && e.getSource() == numberButton.get(i)) {
+						FindButtonGame.remove(numberButton.get(i));
+						FindButtonGame.repaint();
+						index++;
+						System.out.println("게임화면 index : " + index);
+						if(index == 20) {
+							ChangePanel.replacePanel(mf, FindButtonGame,new MiniGameResult(mf, p)); 
+						}
+					}
+
+					if(e.getSource() == start) {
+						numberButton.get(i).setVisible(true);
+						if(i == 0 && playCount == 0) {
+							Timer timer = new Timer(mf, FindButtonGame, p);
+							Thread t1 = timer;
+							t1.setDaemon(true);
+							t1.start();
+						}
+					}
+
+					if(e.getSource() == restart) {
+						for(int j = index; j < 20; j++) {
+							int x = (int)(Math.random() * 285) + 100;
+							int y = (int)(Math.random() * 280) + 400;
+							numberButton.get(j).setBounds(x, y, 50, 50);
+						}
 					}
 				}
-				
-				if(e.getSource() == restart) {
-					for(int j = index; j < 20; j++) {
-						int x = (int)(Math.random() * 285) + 100;
-						int y = (int)(Math.random() * 280) + 400;
-						numberButton.get(j).setBounds(x, y, 50, 50);
-					}
-				}
+			} else if(playCount != 0) {
+				JOptionPane.showMessageDialog(mf, "미니게임은 하루에 한 번만 가능합니다.", "", JOptionPane.WARNING_MESSAGE);
+				ChangePanel.replacePanel(mf, FindButtonGame,new TestMainPage(mf, p)); 
 			}
-			
 		}
 	}
 }

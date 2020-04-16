@@ -30,6 +30,7 @@ public class MiniGameResult extends JPanel {
 		this.MiniGameResult = this;
 		
 		int index = FindButtonGame.index;
+		FindButtonGame.playCount++;		//게임결과화면에서 게임 횟수 증가, 1일 1회만 실행되도록 함
 		
 		System.out.println("결과페이지 index : " + index);
 		System.out.println("결과패널생성");
