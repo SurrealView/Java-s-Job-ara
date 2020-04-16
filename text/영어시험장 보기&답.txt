@@ -30,9 +30,9 @@
 2. arithmetic operator^
 3. substitution operator^$
 
-1. 2^
-2. 3^
-3. 4^$
+1. ||^
+2. &&^
+3. ==^$
 
 1. a < = b? a++ : b--;^
 2. a + b ? a++: b--;^
@@ -122,9 +122,9 @@
 2.isParent^
 3.instanceOf^$
 
-1. The move() method of the Sonata class is executed.^
-2. The move() method of the Avante class is executed.^
-3. The move() method of the car class is executed.^$
+1. Automatics Binding^
+2. Move Binding^
+3. Dynamic Binding^$
 
 1. static final String IHG ="james";^
 2. void  sample(){}^
@@ -134,9 +134,10 @@
 2. public class StudentLee extends Princess,Prince implements Tired{}^
 3. public class StudentLee extends Princess,implements Tired{}^$
 
-1. forcing override^
-2. Enables object creation^
-3. Create objects through constructors^$
+1. Create objects through constructors^
+2. forcing override^
+3. Enables object creation^$
+
 
 1. The string value cannot be modified.^
 2. Increase size using buffer specified in default 16-character size^
@@ -178,9 +179,9 @@
 2. ArrayIndexOutOfBound Exception^
 3. Arithmetic Exception^$
 
-1.ArrayList^
+1.Properties^
 2.Vector^
-3.Properties^$
+3.ArrayList^$
 
 1.add^
 2.length^
