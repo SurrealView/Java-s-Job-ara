@@ -104,9 +104,7 @@ public class GamePanel extends JPanel {
 							ChangePanel.replacePanel(mf, gp, new HomePanel(mf, p)); 
 						}
 					});
-					
-					p.setCouponQTY(p.getCouponQTY() - 1);
-					System.out.println(p.getCouponQTY());
+//					System.out.println(p.getCouponQTY());
 				}
 				
 			}

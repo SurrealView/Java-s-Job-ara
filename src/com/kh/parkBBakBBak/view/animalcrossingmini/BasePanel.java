@@ -35,8 +35,9 @@ public class BasePanel extends JPanel {
 	private Player p;
 	private int chatIndex = 0;
 	private Clip bgm;
-	private String[] chat = new String[] { "미안하다구리 이거 보여주려고 패널 추가로 넣었다구리", "무 값 변동 실화냐구리", "진짜 동물의 숲은 전설이다구리...." };
-	private String[] gameChat = new String[] { "게임 설명글", "게임 설명글2", "게임 설명글3" };
+	private String[] chat = new String[] { "미안하다구리 이거 보여주려고 패널 추가로 넣었다구리", "무 값 변동 실화냐구리", "진짜 동물의 숲은 전설이다구리....",
+			"게임을 하고 싶다면 말을 다시 한번 말을 걸어줘 구리" };
+	private String[] gameChat = new String[] { "아직 게임이 준비되지 않음","게임 설명글", "게임 설명글2", "게임 설명글3" };
 
 	public static int first = 0;
 
@@ -60,7 +61,7 @@ public class BasePanel extends JPanel {
 		} catch (LineUnavailableException e) {
 			e.printStackTrace();
 		}
-
+		
 		this.setLayout(null);
 		this.setSize(1194, 834);
 
@@ -125,8 +126,7 @@ public class BasePanel extends JPanel {
 							beforeMoo.setIcon(moo);
 						else if (chatIndex > 1)
 							beforeMoo.setIcon(allBlack);
-					}
-					if (chatIndex == chat.length) {
+					} else if (chatIndex == chat.length) {
 						bgm.stop();
 						first++;
 						ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
@@ -136,12 +136,11 @@ public class BasePanel extends JPanel {
 				} else {
 					if (chatIndex < chat.length) {
 						ment.setText(gameChat[chatIndex]);
-						chatIndex++;
-					}
-					if (chatIndex == chat.length) {
+					} else if (chatIndex == chat.length) {
 						bgm.stop();
 						ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 					}
+					chatIndex++;
 				}
 			}
 		});
