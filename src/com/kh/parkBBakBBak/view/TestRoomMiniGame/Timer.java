@@ -46,7 +46,9 @@ public class Timer extends Thread {
 					break;
 				}
 				
-				if(FindButtonGame.checkBack)
+				if(FindButtonGame.checkBack == true) {
+					break;
+				}
 
 				System.out.println("i 값 : " + i);
 				System.out.println("타이머 인덱스값 : " + FindButtonGame.index);

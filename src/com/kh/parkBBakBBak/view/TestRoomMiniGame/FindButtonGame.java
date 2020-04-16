@@ -33,6 +33,8 @@ public class FindButtonGame extends JPanel {
 
 
 	public FindButtonGame(JFrame mf, Player p) {
+		
+		checkBack = false;
 
 		System.out.println("미니게임 페이지");
 
