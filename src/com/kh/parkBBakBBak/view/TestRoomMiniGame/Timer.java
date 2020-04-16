@@ -41,10 +41,12 @@ public class Timer extends Thread {
 				this.sleep(1000);
 				label.setText("남은시간 : " + i);
 
-				if(i > 0 && FindButtonGame.index == 20) { 
+				if((i > 0 && FindButtonGame.index == 20)) { 
 					ChangePanel.replacePanel(mf, findButtonGame, new MiniGameResult(mf, p)); 
 					break;
 				}
+				
+				if(FindButtonGame.checkBack)
 
 				System.out.println("i 값 : " + i);
 				System.out.println("타이머 인덱스값 : " + FindButtonGame.index);

@@ -40,8 +40,6 @@ public class AcademyMain extends JPanel{
 		this.setLayout(null);
 		this.setBounds(0, 0, 1194, 834);
 
-
-
 		goBack = new JButton(new ImageIcon(new ImageIcon("images/backButton.png").getImage().getScaledInstance(60, 60, 0)));
 		goBack.setBounds(1100, 15, 60, 60);
 		goBack.setOpaque(false);
@@ -118,6 +116,7 @@ public class AcademyMain extends JPanel{
 		userChat.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		userChat.setOpaque(false);
 		this.add(userChat);
+		userChat.setEditable(false);
 
 		JButton lecture = new JButton("1. °­ÀÇ½Ç¿¡¼­ ¼ö¾÷À» µè´Â´Ù.");
 		lecture.setBounds(215, 620, 500, 57);

@@ -20,7 +20,7 @@ public class MiniGameResult extends JPanel {
 	private JFrame mf;
 	private JPanel MiniGameResult;
 	private Player p;
-
+	private JTextArea gameResult;
 	
 	public MiniGameResult(JFrame mf, Player p) {
 		
@@ -40,10 +40,11 @@ public class MiniGameResult extends JPanel {
 		chatLb.setBounds(180, 250, 820, 270);
 		
 		
-		JTextArea gameResult = new JTextArea();
+		gameResult = new JTextArea();
 		gameResult.setOpaque(false);
 		gameResult.append("");
 		gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25));
+		gameResult.setEditable(false);
 		
 		
 		Image background = new ImageIcon("images/minigameResultBack.png").getImage().getScaledInstance(1194, 834, 0);
@@ -69,7 +70,7 @@ public class MiniGameResult extends JPanel {
 			gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		}
 		
-		this.addMouseListener(new MyMouseAdapter());
+		gameResult.addMouseListener(new MyMouseAdapter());
 		
 		this.add(gameResult);
 		this.add(chatLb);
@@ -81,7 +82,7 @@ public class MiniGameResult extends JPanel {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if(e.getSource() == MiniGameResult) {
+			if(e.getSource() == gameResult) {
 				ChangePanel.replacePanel(mf, MiniGameResult, new TestMainPage(mf,p));
 			}
 		}

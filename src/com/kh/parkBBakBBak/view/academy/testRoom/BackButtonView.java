@@ -109,6 +109,7 @@ public class BackButtonView extends JPanel{
 		notice.append("시험을 포기하고 돌아가시겠습니까?\n소모된 배터리는 복구되지 않습니다.");
 		notice.setFont(new Font("맑은 고딕", Font.BOLD, 25));
 		notice.setBounds(390, 325, 600, 100);
+		notice.setEditable(false);
 		
 		yes = new JButton("네");
 		yes.setOpaque(false);
