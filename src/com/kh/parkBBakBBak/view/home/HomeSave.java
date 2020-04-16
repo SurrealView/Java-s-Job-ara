@@ -149,7 +149,7 @@ public class HomeSave extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePanel.replacePanel(mf, hs, new HiddenGame(mf, p));
+				ChangePanel.replacePanel(mf, hs, new GameMain(mf, p));
 			}
 		});		
 		
