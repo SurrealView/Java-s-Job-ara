@@ -32,9 +32,6 @@ public class Timer extends Thread {
 		label.setFont(new Font("맑은 고딕", Font.BOLD, 14));
 		findButtonGame.add(label);
 
-		int index = FindButtonGame.index;
-
-
 		try {
 			for(i = 25; i >= 0; i--){
 				if(i == 9) {
@@ -44,8 +41,17 @@ public class Timer extends Thread {
 				this.sleep(1000);
 				label.setText("남은시간 : " + i);
 
-				if(index == 20) {
-					ChangePanel.replacePanel(mf, findButtonGame,new MiniGameResult(mf, p)); 
+				if(i > 0 && FindButtonGame.index == 20) { 
+					ChangePanel.replacePanel(mf, findButtonGame, new MiniGameResult(mf, p)); 
+					break;
+				}
+
+				System.out.println("i 값 : " + i);
+				System.out.println("타이머 인덱스값 : " + FindButtonGame.index);
+				if (i == 0 && FindButtonGame.index < 20) {
+					System.out.println("시간초과했을때...");
+					ChangePanel.replacePanel(mf, findButtonGame, new MiniGameResult(mf, p));
+					break;
 				}
 			}
 
@@ -53,8 +59,7 @@ public class Timer extends Thread {
 			e.printStackTrace();
 		}
 		System.out.println(i);
-		if(index < 20 && i == -1 && index > 0) {
-			ChangePanel.replacePanel(mf, findButtonGame,new MiniGameResult(mf, p)); 
-		}
+
+
 	}
 }
