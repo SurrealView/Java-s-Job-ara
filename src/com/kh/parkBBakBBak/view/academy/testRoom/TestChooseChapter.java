@@ -129,9 +129,9 @@ public class TestChooseChapter extends JPanel {
 		
 		noticeBattery = new JTextArea();
 		if(p.getHp() > 0) {
-			noticeBattery.setText("시험을 시작합니다.\n배터리가 1 감소합니다.");
+			noticeBattery.setText("시험을 시작합니다.\n체력이 1 감소합니다.");
 		} else if(p.getHp() <= 0) {
-			noticeBattery.setText("배터리가 부족합니다.\n메인화면으로 돌아갑니다.");
+			noticeBattery.setText("체력이 부족합니다.\n메인화면으로 돌아갑니다.");
 		}
 
 		

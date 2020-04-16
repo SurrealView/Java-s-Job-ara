@@ -127,7 +127,7 @@ public class AcademyMain extends JPanel{
 		lecture.setHorizontalAlignment(lecture.LEFT);
 		this.add(lecture);
 
-		testRoom = new JButton("2. 시험장에서 시험을 본다.(배터리 1 감소)");
+		testRoom = new JButton("2. 시험장에서 시험을 본다.(체력 1 감소)");
 		testRoom.setBounds(215, 675, 500, 57);
 		testRoom.setFont(new Font("맑은 고딕", Font.PLAIN, 22));
 		testRoom.setBorderPainted(false);
