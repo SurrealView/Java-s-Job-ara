@@ -54,19 +54,7 @@ public class Join extends JPanel{
 		inputId.setBorder(null);
 		inputId.setForeground(Color.BLACK);
 		
-//		// 아이디 객체 저장
-//		inputId.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				String id = inputId.getText();
-//				p.setUserId(id);
-//				System.out.println(p.getUserId());		// player 아이디 확인 용
-//			}
-//		});
-		
 		this.add(inputId);
-		
 		
 		JLabel pw = new JLabel("비밀번호");
 		pw.setSize(100,34);
@@ -84,29 +72,7 @@ public class Join extends JPanel{
 		inputPw.setLocation(563, 547);
 		inputPw.setBorder(null);
 		
-//		// 비밀번호 객체 저장
-//		inputPw.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				
-//				char[] pw = inputPw.getPassword();
-//				
-//				String pwd = "";
-//				
-//				for(char ch : pw) {
-//					Character.toString(ch);
-//					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
-//					
-//					p.setUserPwd(pwd);
-//				}
-//				
-//				System.out.println(p.getUserPwd());			// 플레이어 비밀번호 확인용
-//			}
-//		});		
-		
 		this.add(inputPw);
-		
 		
 		JLabel pw2 = new JLabel("비밀번호 확인");
 		pw2.setSize(100,34);
@@ -124,34 +90,35 @@ public class Join extends JPanel{
 		inputPw2.setLocation(563, 595);
 		inputPw2.setBorder(null);
 		
-		
-//		// 비밀번호 확인
-//		inputPw2.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				
-//				char[] pw = inputPw2.getPassword();
-//				
-//				String pwd = "";
-//				
-//				for(char ch : pw) {
-//					Character.toString(ch);
-//					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
-//					
-//					p.setCheckPwd(pwd);
-//				}
-//				
-//				System.out.println(p.getCheckPwd());			// 플레이어 비밀번호 확인용
-//				
-//			}
-//		});				
-		
 		this.add(inputPw2);
 		
+		JButton checkId = new JButton("ID 중복 확인");
+		checkId.setSize(130,20);
+		checkId.setLocation(458,643);
+		checkId.setFont(new Font("맑은 고딕", Font.ITALIC, 15));
+		checkId.setBorder(null);
+		
+		checkId.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String id = inputId.getText();
+				boolean du = new LoginManager().duplicate(id);
+				if(du) {
+					JOptionPane.showMessageDialog(mf, "중복되는 ID입니다.", "Id Check", JOptionPane.WARNING_MESSAGE);
+					check = false;
+					count = 4;
+				} else {
+					JOptionPane.showMessageDialog(mf, "사용가능한 ID입니다.", "Id Check", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+		
+		this.add(checkId);
+		
 		JButton clickLogin = new JButton("비밀번호 확인");
-		clickLogin.setSize(200,20);
-		clickLogin.setLocation(497,643);
+		clickLogin.setSize(130,20);
+		clickLogin.setLocation(608,643);
 		clickLogin.setFont(new Font("맑은 고딕", Font.ITALIC, 15));
 		clickLogin.setBorder(null);
 		
@@ -209,7 +176,10 @@ public class Join extends JPanel{
 					// 패스워드 체크를 해주세요! dialog
 					JOptionPane.showMessageDialog(mf, "Password Check를 해주세요!", "경고", JOptionPane.WARNING_MESSAGE);
 					
-				} else {
+				} else if(count == 4) { 
+					JOptionPane.showMessageDialog(mf, "중복되는 ID입니다!", "경고", JOptionPane.WARNING_MESSAGE);
+				}
+				else {
 					if(check == true) {
 						// 플레이어 정보를 저장한 dat파일 저장
 						
