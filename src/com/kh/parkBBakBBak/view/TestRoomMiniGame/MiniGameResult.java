@@ -1,4 +1,3 @@
-
 package com.kh.parkBBakBBak.view.TestRoomMiniGame;
 
 import java.awt.Font;
@@ -17,76 +16,76 @@ import com.kh.parkBBakBBak.view.ChangePanel;
 import com.kh.parkBBakBBak.view.academy.testRoom.TestMainPage;
 
 public class MiniGameResult extends JPanel {
-	
-	private JFrame mf;
-	private JPanel MiniGameResult;
-	private Player p;
-	private JTextArea gameResult;
-	
-	public MiniGameResult(JFrame mf, Player p) {
-		
-		
-		this.mf = mf;
-		this.p = p;
-		this.MiniGameResult = this;
-		
-		FindButtonGame.playCount++;		//ê²Œì„ê²°ê³¼í™”ë©´ì—ì„œ ê²Œì„ íšŸìˆ˜ ì¦ê°€, 1ì¼ 1íšŒë§Œ ì‹¤í–‰ë˜ë„ë¡ í•¨
-		
-		System.out.println("ê²°ê³¼í˜ì´ì§€ index : " + FindButtonGame.index);
-		System.out.println("ê²°ê³¼íŒ¨ë„ìƒì„±");
-		
-		Image chat = new ImageIcon("images/txtarea2.png").getImage().getScaledInstance(820, 270, 0);
-		JLabel chatLb = new JLabel(new ImageIcon(chat));
-		chatLb.setLayout(null);
-		chatLb.setBounds(180, 250, 820, 270);
-		
-		
-		gameResult = new JTextArea();
-		gameResult.setOpaque(false);
-		gameResult.append("");
-		gameResult.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 25));
-		gameResult.setEditable(false);
-		
-		
-		Image background = new ImageIcon("images/minigameResultBack.png").getImage().getScaledInstance(1194, 834, 0);
-		JLabel backgroundLb = new JLabel(new ImageIcon(background));
-		backgroundLb.setBounds(0, 0, 1194, 834);
-		
-		
-		if(FindButtonGame.index == 20) {
-			//ë²„íŠ¼ ë‹¤ ì°¾ì•˜ì„ë•Œ
-			gameResult.setText("ë…¸ë³´ë…¸ë³´ : ì„ë¬´ë¥¼ ì™„ìˆ˜í–ˆêµ¬ë‚˜! ì´ê±¸ë¡œ í˜ë‚´ì„œ ë” ì—´ì‹¬íˆ ê³µë¶€í•˜ë¼êµ¬!\nì»¤í”¼ì¿ í° + 1");
-			gameResult.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 20));
-			gameResult.setBounds(250, 355, 700, 400);
-			p.setCouponQTY(p.getCouponQTY() + 1);
-			
-		} else if(FindButtonGame.index < 20 && FindButtonGame.index > 0){
-			//ë²„íŠ¼ ë‹¤ ëª»ì°¾ì•˜ì„ ë•Œ
-			gameResult.setBounds(250, 370, 600, 400);
-			gameResult.setText("ë…¸ë³´ë…¸ë³´ : ì•„ì‰½ë„¤.. ë‚´ì¼ ë‹¤ì‹œ ë„ì „ í•´ë³´ë¼êµ¬!");
-			gameResult.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 20));
-		} else if(FindButtonGame.index == 0) {
-			gameResult.setBounds(250, 370, 600, 400);
-			gameResult.setText("ë…¸ë³´ë…¸ë³´ : ë­ì•¼.. ì•„ë¬´ê²ƒë„ ì•ˆí•œê±°ì•¼?");
-			gameResult.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 20));
-		}
-		
-		gameResult.addMouseListener(new MyMouseAdapter());
-		
-		this.add(gameResult);
-		this.add(chatLb);
-		this.add(backgroundLb);
-		mf.add(this);
-	}
-	
-	class MyMouseAdapter extends MouseAdapter {
+   
+   private JFrame mf;
+   private JPanel MiniGameResult;
+   private Player p;
+   private JTextArea gameResult;
+   
+   public MiniGameResult(JFrame mf, Player p) {
+      
+      
+      this.mf = mf;
+      this.p = p;
+      this.MiniGameResult = this;
+      
+      FindButtonGame.playCount++;      //°ÔÀÓ°á°úÈ­¸é¿¡¼­ °ÔÀÓ È½¼ö Áõ°¡, 1ÀÏ 1È¸¸¸ ½ÇÇàµÇµµ·Ï ÇÔ
+      
+      System.out.println("°á°úÆäÀÌÁö index : " + FindButtonGame.index);
+      System.out.println("°á°úÆĞ³Î»ı¼º");
+      
+      Image chat = new ImageIcon("images/txtarea2.png").getImage().getScaledInstance(820, 270, 0);
+      JLabel chatLb = new JLabel(new ImageIcon(chat));
+      chatLb.setLayout(null);
+      chatLb.setBounds(180, 250, 820, 270);
+      
+      
+      gameResult = new JTextArea();
+      gameResult.setOpaque(false);
+      gameResult.append("");
+      gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25));
+      gameResult.setEditable(false);
+      
+      
+      Image background = new ImageIcon("images/minigameResultBack.png").getImage().getScaledInstance(1194, 834, 0);
+      JLabel backgroundLb = new JLabel(new ImageIcon(background));
+      backgroundLb.setBounds(0, 0, 1194, 834);
+      
+      
+      if(FindButtonGame.index == 20) {
+         //¹öÆ° ´Ù Ã£¾ÒÀ»¶§
+         gameResult.setText("³ëº¸³ëº¸ : ÀÓ¹«¸¦ ¿Ï¼öÇß±¸³ª! ÀÌ°É·Î Èû³»¼­ ´õ ¿­½ÉÈ÷ °øºÎÇÏ¶ó±¸!\nÄ¿ÇÇÄíÆù + 1");
+         gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+         gameResult.setBounds(250, 355, 700, 400);
+         p.setCouponQTY(p.getCouponQTY() + 1);
+         
+      } else if(FindButtonGame.index < 20 && FindButtonGame.index > 0){
+         //¹öÆ° ´Ù ¸øÃ£¾ÒÀ» ¶§
+         gameResult.setBounds(250, 370, 600, 400);
+         gameResult.setText("³ëº¸³ëº¸ : ¾Æ½±³×.. ³»ÀÏ ´Ù½Ã µµÀü ÇØº¸¶ó±¸!");
+         gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+      } else if(FindButtonGame.index == 0) {
+         gameResult.setBounds(250, 370, 600, 400);
+         gameResult.setText("³ëº¸³ëº¸ : ¹¹¾ß.. ¾Æ¹«°Íµµ ¾ÈÇÑ°Å¾ß?");
+         gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+      }
+      
+      gameResult.addMouseListener(new MyMouseAdapter());
+      
+      this.add(gameResult);
+      this.add(chatLb);
+      this.add(backgroundLb);
+      mf.add(this);
+   }
+   
+   class MyMouseAdapter extends MouseAdapter {
 
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			if(e.getSource() == gameResult) {
-				ChangePanel.replacePanel(mf, MiniGameResult, new TestMainPage(mf,p));
-			}
-		}
-	}
+      @Override
+      public void mouseClicked(MouseEvent e) {
+         if(e.getSource() == gameResult) {
+            ChangePanel.replacePanel(mf, MiniGameResult, new TestMainPage(mf,p));
+         }
+      }
+   }
 
 }
