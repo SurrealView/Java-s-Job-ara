@@ -46,8 +46,7 @@ public class LoginManager {
 	public int checkLogin(String id, String pw, Player p) {
 		
 		System.out.println("받아온 값 : " + id);
-		String idCheck = id + "\n";
-//		String pwCheck = pw + "\n";
+		String idCheck = id;
 		
 		ArrayList<Player> list = ld.readPlayerList();
 		
@@ -75,8 +74,6 @@ public class LoginManager {
 		
 		if(check == 1) {
 			if(BBakBBak.getUserPwd().equals(pw)) {
-//				System.out.println(BBakBBak.toString());
-//				System.out.println(pw.compareTo(BBakBBak.getUserPwd()));
 				this.p = BBakBBak;
 				
 				switch(this.p.getCareer()) {

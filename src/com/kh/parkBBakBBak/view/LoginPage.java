@@ -52,14 +52,14 @@ public class LoginPage extends JPanel {
 		loginInputId.setBorder(null);
 		loginInputId.setForeground(Color.BLACK);
 		
-		// 아이디 객체 저장
-		loginInputId.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				loginId = loginInputId.getText();
-				System.out.println("loginId : " + loginId);
-			}
-		});
+//		// 아이디 객체 저장
+//		loginInputId.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				loginId = loginInputId.getText();
+//				System.out.println("loginId : " + loginId);
+//			}
+//		});
 		
 		this.add(loginInputId);
 		
@@ -80,16 +80,16 @@ public class LoginPage extends JPanel {
 		loginInputPw.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		loginInputPw.setBorder(null);
 		
-		// 비밀번호 확인
-		loginInputPw.addActionListener(new ActionListener() {
-				
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String pw2 = loginInputPw.getText();
-				loginPw = pw2;
-				System.out.println("loginPw : " + loginPw);			// 플레이어 비밀번호 확인용
-			}
-		});						
+//		// 비밀번호 확인
+//		loginInputPw.addActionListener(new ActionListener() {
+//				
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				String pw2 = loginInputPw.getText();
+//				loginPw = pw2;
+//				System.out.println("loginPw : " + loginPw);			// 플레이어 비밀번호 확인용
+//			}
+//		});						
 		
 		this.add(loginInputPw);
 		
@@ -105,6 +105,13 @@ public class LoginPage extends JPanel {
 		clickLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				loginId = loginInputId.getText();
+				System.out.println("loginId : " + loginId);
+				
+				String pw2 = loginInputPw.getText();
+				loginPw = pw2;
+				System.out.println("loginPw : " + loginPw);			// 플레이어 비밀번호 확인용
 				
 				int gaja = 0; 
 				

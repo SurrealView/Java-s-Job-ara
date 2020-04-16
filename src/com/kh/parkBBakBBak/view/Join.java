@@ -37,9 +37,6 @@ public class Join extends JPanel{
 		this.setSize(1194,834);
 		this.setLocation(0,0);
 		
-		
-		
-		
 		JLabel id = new JLabel("아 이 디");
 		id.setSize(100,34);
 		id.setLocation(448,499);
@@ -55,20 +52,18 @@ public class Join extends JPanel{
 		inputId.setSize(185,34);
 		inputId.setLocation(563, 499);
 		inputId.setBorder(null);
-//		inputId.setOpaque(true);
-//		inputId.setBackground(new Color (0,0,0,125));
 		inputId.setForeground(Color.BLACK);
 		
-		// 아이디 객체 저장
-		inputId.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String id = inputId.getText();
-				p.setUserId(id + "\n");
-				System.out.println(p.getUserId());		// player 아이디 확인 용
-			}
-		});
+//		// 아이디 객체 저장
+//		inputId.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				String id = inputId.getText();
+//				p.setUserId(id);
+//				System.out.println(p.getUserId());		// player 아이디 확인 용
+//			}
+//		});
 		
 		this.add(inputId);
 		
@@ -89,26 +84,26 @@ public class Join extends JPanel{
 		inputPw.setLocation(563, 547);
 		inputPw.setBorder(null);
 		
-		// 비밀번호 객체 저장
-		inputPw.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				char[] pw = inputPw.getPassword();
-				
-				String pwd = "";
-				
-				for(char ch : pw) {
-					Character.toString(ch);
-					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
-					
-					p.setUserPwd(pwd);
-				}
-				
-				System.out.println(p.getUserPwd());			// 플레이어 비밀번호 확인용
-			}
-		});		
+//		// 비밀번호 객체 저장
+//		inputPw.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				
+//				char[] pw = inputPw.getPassword();
+//				
+//				String pwd = "";
+//				
+//				for(char ch : pw) {
+//					Character.toString(ch);
+//					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
+//					
+//					p.setUserPwd(pwd);
+//				}
+//				
+//				System.out.println(p.getUserPwd());			// 플레이어 비밀번호 확인용
+//			}
+//		});		
 		
 		this.add(inputPw);
 		
@@ -130,27 +125,27 @@ public class Join extends JPanel{
 		inputPw2.setBorder(null);
 		
 		
-		// 비밀번호 확인
-		inputPw2.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				char[] pw = inputPw2.getPassword();
-				
-				String pwd = "";
-				
-				for(char ch : pw) {
-					Character.toString(ch);
-					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
-					
-					p.setCheckPwd(pwd);
-				}
-				
-				System.out.println(p.getCheckPwd());			// 플레이어 비밀번호 확인용
-				
-			}
-		});				
+//		// 비밀번호 확인
+//		inputPw2.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				
+//				char[] pw = inputPw2.getPassword();
+//				
+//				String pwd = "";
+//				
+//				for(char ch : pw) {
+//					Character.toString(ch);
+//					pwd += (pwd.equals(""))? "" + ch + "" : "" + ch + "";
+//					
+//					p.setCheckPwd(pwd);
+//				}
+//				
+//				System.out.println(p.getCheckPwd());			// 플레이어 비밀번호 확인용
+//				
+//			}
+//		});				
 		
 		this.add(inputPw2);
 		
@@ -164,6 +159,20 @@ public class Join extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				String id = inputId.getText();
+				p.setUserId(id);
+				System.out.println("회원가입 아이디 : " + p.getUserId());		// player 아이디 확인 용
+				
+				String pwd1 = inputPw.getText();
+				p.setUserPwd(pwd1);
+				System.out.println("회원가입 비번1 : " + p.getUserPwd());
+				
+				String pwd2 = inputPw2.getText();
+				p.setCheckPwd(pwd2);
+				System.out.println("회원가입 비번2 : " + p.getCheckPwd());
+				
+				
 				count++;
 				if(p.getUserPwd().equals(p.getCheckPwd())) {
 					System.out.println("비밀번호 동일");
