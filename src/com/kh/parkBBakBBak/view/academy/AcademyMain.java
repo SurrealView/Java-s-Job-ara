@@ -119,7 +119,7 @@ public class AcademyMain extends JPanel{
 		userChat.setOpaque(false);
 		this.add(userChat);
 
-
+		
 
 		JButton lecture = new JButton("1. 강의실에서 수업을 듣는다.");
 		lecture.setBounds(215, 620, 500, 57);
@@ -141,6 +141,44 @@ public class AcademyMain extends JPanel{
 		if(p.getWeekDay().equals("토") || p.getWeekDay().equals("일")) {
 			this.remove(lecture);
 			testRoom.setVisible(false);
+			JButton hidden = new JButton();
+			hidden.setBounds(525, 160, 60, 60);
+			
+			hidden.setBorderPainted(false);
+			hidden.setContentAreaFilled(false);
+			hidden.setOpaque(false);
+			//hidden.setHorizontalAlignment(hidden.LEFT);
+			this.add(hidden);
+			hidden.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ChangePanel.replacePanel(mf, academyMain,new EasterEgg(mf, p));
+					
+					
+				}
+			});
+			hidden.addMouseListener(new MouseAdapter() {
+				
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					// TODO Auto-generated method stub
+					Image godJava = new ImageIcon("images/teacher.png").getImage().getScaledInstance(170, 90, 0);
+					hidden .setIcon(new ImageIcon(godJava));
+					hidden.setSize(170,90);
+					
+					
+				}
+				@Override
+				public void mouseExited(MouseEvent e) {
+					// TODO Auto-generated method stub
+					hidden.setIcon(new ImageIcon(""));
+					hidden.setSize(60,60);
+					hidden.setBorderPainted(false);
+					hidden.setContentAreaFilled(false);
+					hidden.setOpaque(false);
+				}
+			});
 			this.repaint();
 			chatLb.setBounds(190, 250, 820, 270);
 			userChat.setText("주말에는 운영하지 않습니다.\n주말 이용 가능 컨텐츠 : 면접장, 카페");
