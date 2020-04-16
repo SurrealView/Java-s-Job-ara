@@ -54,7 +54,7 @@ public class BasePanel extends JPanel {
 			audioInputStream = AudioSystem.getAudioInputStream(file);
 			bgm = AudioSystem.getClip();
 			bgm.open(audioInputStream);
-			bgm.loop(bgm.LOOP_CONTINUOUSLY);
+			bgm.loop(Clip.LOOP_CONTINUOUSLY);
 		} catch (UnsupportedAudioFileException | IOException e) {
 			e.printStackTrace();
 		} catch (LineUnavailableException e) {
