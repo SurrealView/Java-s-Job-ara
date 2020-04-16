@@ -5,10 +5,12 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.jws.soap.SOAPBinding;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -137,7 +139,6 @@ public class HomePanel extends JPanel {
 			}
 		});
 		
-//		JTextField text1 = new JTextField("하~! 오늘도 알찬 하루였다...");
 		JLabel text1 = new JLabel("하~! 오늘도 알찬 하루였다...");
 		text1.setSize(715,45);
 		text1.setLocation(240,551);
@@ -146,7 +147,6 @@ public class HomePanel extends JPanel {
 		text1.setBorder(null);
 		this.add(text1);
 		
-//		JTextField text2 = new JTextField("이제 뭐할까??");
 		JLabel text2 = new JLabel("이제 뭐할까??");
 		text2.setSize(715,45);
 		text2.setLocation(240,611);
@@ -167,16 +167,4 @@ public class HomePanel extends JPanel {
 		
 	}
 	
-
-	
 }
-
-//class HomeMouse extends MouseAdapter {
-//	
-//	@Override
-//	public void mouseClicked(MouseEvent e) {
-//		
-//		HomeSave hs = new HomeSave(mf, p);
-//		ChangePanel.replacePanel(mf, panel, login);		
-//	}
-//}
