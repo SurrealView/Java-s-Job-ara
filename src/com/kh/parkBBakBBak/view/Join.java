@@ -25,6 +25,7 @@ public class Join extends JPanel{
 	private Player p;
 	private int count = 0;
 	private boolean check;
+	private boolean duId;
 	
 	public Join() {}
 	
@@ -106,10 +107,11 @@ public class Join extends JPanel{
 				boolean du = new LoginManager().duplicate(id);
 				if(du) {
 					JOptionPane.showMessageDialog(mf, "중복되는 ID입니다.", "Id Check", JOptionPane.WARNING_MESSAGE);
-					check = false;
+					duId = false;
 					count = 4;
 				} else {
 					JOptionPane.showMessageDialog(mf, "사용가능한 ID입니다.", "Id Check", JOptionPane.INFORMATION_MESSAGE);
+					duId = true;
 				}
 			}
 		});
@@ -172,29 +174,26 @@ public class Join extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(count == 0) {
-					// 패스워드 체크를 해주세요! dialog
-					JOptionPane.showMessageDialog(mf, "Password Check를 해주세요!", "경고", JOptionPane.WARNING_MESSAGE);
-					
-				} else if(count == 4) { 
-					JOptionPane.showMessageDialog(mf, "중복되는 ID입니다!", "경고", JOptionPane.WARNING_MESSAGE);
-				}
-				else {
-					if(check == true) {
-						// 플레이어 정보를 저장한 dat파일 저장
-						
-						LoginManager lm = new LoginManager();
-						lm.createPlayer(p);
-						
-						
-						ChangePanel.replacePanel(mf, panel, new LoginPage(mf,p)); 
-						
-						
+				if(duId) {
+					if(count == 0) {
+						// 패스워드 체크를 해주세요! dialog
+						JOptionPane.showMessageDialog(mf, "Password Check를 해주세요!", "경고", JOptionPane.WARNING_MESSAGE);
+					} else if(count == 4) { 
+						JOptionPane.showMessageDialog(mf, "중복되는 ID입니다!", "경고", JOptionPane.WARNING_MESSAGE);
+						check = false;
 					} else {
-						// 비밀번호 확인을 다시 해주세요 dialog
-						JOptionPane.showMessageDialog(mf, "Password Check가 일치하지 않습니다!", "경고", JOptionPane.WARNING_MESSAGE);
+						if(check == true) {
+							// 플레이어 정보를 저장한 dat파일 저장
+							LoginManager lm = new LoginManager();
+							lm.createPlayer(p);
+							ChangePanel.replacePanel(mf, panel, new LoginPage(mf,p)); 
+						} else {
+							// 비밀번호 확인을 다시 해주세요 dialog
+							JOptionPane.showMessageDialog(mf, "Password Check가 일치하지 않습니다!", "경고", JOptionPane.WARNING_MESSAGE);
+						}
 					}
-					
+				} else {
+					JOptionPane.showMessageDialog(mf, "정보가 입력되지 않았습니다!", "경고", JOptionPane.WARNING_MESSAGE);
 				}
 				
 			}
