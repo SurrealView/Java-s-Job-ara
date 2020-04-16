@@ -27,7 +27,7 @@ public class FindButtonGame extends JPanel {
 	private ArrayList<JButton> numberButton;
 	private JButton start;
 	private JButton restart;
-	public static int index = 0;
+	public static int index;		//유저가 누른 버튼의 번호
 	public static int playCount;		//1일 게임 실행 횟수 체크
 
 	public FindButtonGame(JFrame mf, Player p) {
@@ -40,6 +40,8 @@ public class FindButtonGame extends JPanel {
 
 		this.setLayout(null);
 		this.setBounds(0, 0, 1194, 834);
+		
+		index = 0;
 
 		//뒤로가기 버튼
 		goBack = new JButton(new ImageIcon(new ImageIcon("images/backButton.png").getImage().getScaledInstance(60, 60, 0)));
@@ -114,9 +116,6 @@ public class FindButtonGame extends JPanel {
 						FindButtonGame.repaint();
 						index++;
 						System.out.println("게임화면 index : " + index);
-						if(index == 20) {
-							ChangePanel.replacePanel(mf, FindButtonGame,new MiniGameResult(mf, p)); 
-						}
 					}
 
 					if(e.getSource() == start) {
@@ -136,6 +135,8 @@ public class FindButtonGame extends JPanel {
 							numberButton.get(j).setBounds(x, y, 50, 50);
 						}
 					}
+					
+					
 				}
 			} else if(playCount != 0) {
 				JOptionPane.showMessageDialog(mf, "미니게임은 하루에 한 번만 가능합니다.", "", JOptionPane.WARNING_MESSAGE);

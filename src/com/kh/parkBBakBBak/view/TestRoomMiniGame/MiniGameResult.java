@@ -66,10 +66,6 @@ public class MiniGameResult extends JPanel {
 		}
 		
 		this.addMouseListener(new MyMouseAdapter());
-		
-
-		
-		FindButtonGame.index = 0;
 	}
 	
 	class MyMouseAdapter extends MouseAdapter {
