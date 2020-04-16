@@ -62,7 +62,7 @@ public class SaveComplete extends JPanel{
 		JLabel text1 = new JLabel("ÇÏ¾Ï~~ ºýºýÀÌ Á¹·Á~~");
 		text1.setSize(715,45);
 		text1.setLocation(240,551);
-		text1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		text1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 24));
 		text1.setBackground(new Color(240,247,247));
 		text1.setBorder(null);
 		this.add(text1);
@@ -70,7 +70,7 @@ public class SaveComplete extends JPanel{
 		JLabel text2 = new JLabel("¾ó¸¥ º¹½ÀÇÏ°í ÀÚ¾ßÁö~~");
 		text2.setSize(715,45);
 		text2.setLocation(240,611);
-		text2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		text2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 24));
 		text2.setBackground(new Color(240,247,247));
 		text2.setBorder(null);
 		this.add(text2);
@@ -78,7 +78,7 @@ public class SaveComplete extends JPanel{
 		JLabel text3 = new JLabel("(ÇöÀç±îÁö ÁøÇà»óÈ²ÀÌ ÀúÀåµË´Ï´Ù.)");
 		text3.setSize(715,45);
 		text3.setLocation(240,671);
-		text3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		text3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 24));
 		text3.setBackground(new Color(240,247,247));
 		text3.setBorder(null);
 		this.add(text3);

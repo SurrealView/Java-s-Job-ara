@@ -79,7 +79,7 @@ public class GamePanel extends JPanel {
 						
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							JOptionPane.showMessageDialog(mf, "쿠폰을 하나 드립니다.", "정답", JOptionPane.PLAIN_MESSAGE);
+							JOptionPane.showMessageDialog(mf, "정답입니다! \n쿠폰을 하나 드립니다.", "정답", JOptionPane.PLAIN_MESSAGE);
 							ChangePanel.replacePanel(mf, gp, new HomePanel(mf, p)); 
 						}
 					});
@@ -100,7 +100,7 @@ public class GamePanel extends JPanel {
 						
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							JOptionPane.showMessageDialog(mf, "땡!", "오답", JOptionPane.PLAIN_MESSAGE);
+							JOptionPane.showMessageDialog(mf, "틀렸습니다...  :(", "오답", JOptionPane.PLAIN_MESSAGE);
 							ChangePanel.replacePanel(mf, gp, new HomePanel(mf, p)); 
 						}
 					});

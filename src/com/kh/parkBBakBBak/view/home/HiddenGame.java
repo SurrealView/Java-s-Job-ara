@@ -28,8 +28,6 @@ public class HiddenGame extends JPanel {
 		this.setSize(1194, 834);
 		this.setLocation(0, 0);	
 		
-		
-		
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("images/backButton.png").getImage().getScaledInstance(60, 60, 0)));
 		backButton.setSize(60,60);
 		backButton.setLocation(1082,30);
@@ -85,9 +83,7 @@ public class HiddenGame extends JPanel {
 		bg.setSize(1194, 834);
 		bg.setLocation(0, 0);
 		this.add(bg);
-		
-		
-		
+	
 	}
 
 }

@@ -121,7 +121,7 @@ public class HomeEnd3 extends JPanel {
 		JLabel text1 = new JLabel("À¸¾Ç! Áö°¢ÀÌ´Ù!!! ¾ó¸¥ °¡ÀÚ!!!!");
 		text1.setSize(715,45);
 		text1.setLocation(240,551);
-		text1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		text1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 24));
 		text1.setBackground(new Color(240,247,247));
 		text1.setBorder(null);
 		this.add(text1);
