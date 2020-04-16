@@ -31,7 +31,7 @@ public class Ending extends JPanel {
 	private ArrayList<JButton> buttonArr = new ArrayList<JButton>();
 	private String[] endingMent = new String[] { "성공적으로  기업 취업을 마친 빡빡", "KH를 빠져나와 새로운 삶을 펼치게 된 그에게",
 			"황금 빛 미래가 펼쳐지길 바라며" };
-	private String[] speacialEndingMent = new String[] { "성공적으로  해외 취업을 마친 빡빡", "대한민국을 떠나 세계적인 개발자가 되어버린 빡빡이 Adios!",
+	private String[] speacialEndingMent = new String[] { "성공적으로  해외 취업을 마친 빡빡", "대한민국을 떠나 세계적인 개발자가 되어버린 빡빡이",
 			"지금 동안 게임을 플레이 해주셔서 감사합니다!" };
 	private String[] moreStudy = new String[] { "박빡빡 :", "내가 많이 부족했어....", "좀더 스킬을 연마해서 다시 준비하자!" };
 
