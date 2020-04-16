@@ -2,9 +2,12 @@ package com.kh.parkBBakBBak.view.interview;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -29,6 +32,19 @@ public class DelayTime extends JPanel{
 		this.setLocation(0,0);
 		InterviewManager.pageNum=7;
 		this.setBackground(Color.BLACK);
+		
+		JButton nextButton=SelectInterview.addJButtonImage(new JButton(),"nextButton.png", 60, 60);
+		nextButton.setLocation(1000,50);
+		this.add(nextButton);
+
+		nextButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ChangePanel.replacePanel(mf, panel, new ShowResult(mf,p));
+			}
+		});
 		
 		this.addMouseListener(new MouseAdapter() {
 
