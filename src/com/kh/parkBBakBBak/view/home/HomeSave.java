@@ -135,6 +135,23 @@ public class HomeSave extends JPanel {
 				
 			}
 		});
+
+		JButton text2 = new JButton("2. ∞‘¿”¿ª «—¥Ÿ.");
+		text2.setSize(715,45);
+		text2.setLocation(240,611);
+		text2.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 30));
+		text2.setBackground(new Color(240,247,247));
+		text2.setBorder(null);
+		text2.setHorizontalAlignment(SwingConstants.LEFT);
+		this.add(text2);
+		
+		text2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ChangePanel.replacePanel(mf, hs, new GameMain(mf, p));
+			}
+		});		
 		
 		JLabel txtBoxImg = new JLabel(new ImageIcon(new ImageIcon("images/txtarea2.png").getImage().getScaledInstance(820, 270, 0)));
 		txtBoxImg.setSize(820,270);
