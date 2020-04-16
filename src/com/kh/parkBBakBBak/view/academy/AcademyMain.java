@@ -118,9 +118,7 @@ public class AcademyMain extends JPanel{
 		userChat.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		userChat.setOpaque(false);
 		this.add(userChat);
-
-		
-
+	
 		JButton lecture = new JButton("1. °­ÀÇ½Ç¿¡¼­ ¼ö¾÷À» µè´Â´Ù.");
 		lecture.setBounds(215, 620, 500, 57);
 		lecture.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 22));
