@@ -73,6 +73,7 @@ public class TestResult extends JPanel {
 		resultArea.append("");
 		resultArea.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 25));
 		resultArea.setBounds(235, 370, 150, 30);
+		resultArea.setEditable(false);
 		
 		if(userSelectAnswer.equals(answer.get((buttonIndex * 5) + index))) {
 			resultArea.setText("¡§¥‰¿‘¥œ¥Ÿ.");
@@ -86,7 +87,7 @@ public class TestResult extends JPanel {
 		this.add(chatLb);
 		this.add(backgroundLb);
 		
-		this.addMouseListener(new MyMouseAdapter());
+		resultArea.addMouseListener(new MyMouseAdapter());
 	}
 	
 

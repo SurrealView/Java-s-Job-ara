@@ -25,6 +25,7 @@ public class TestFinalResult extends JPanel {
 	private JPanel TestFinalResult;
 	private Player p;
 	private int answerCount;
+	private JTextArea testResult;
 	
 
 	public TestFinalResult(JFrame mf, Player p, int answerCount, int buttonIndex) {
@@ -102,10 +103,11 @@ public class TestFinalResult extends JPanel {
 		chatLb.setLayout(null);
 		chatLb.setBounds(180, 250, 820, 270);
 
-		JTextArea testResult = new JTextArea(100, 300);
+		testResult = new JTextArea(100, 300);
 		testResult.setOpaque(false);
 		testResult.append("");
 		testResult.setFont(new Font("맑은 고딕", Font.BOLD, 25));
+		testResult.setEditable(false);
 
 
 		if(answerCount > 3) {
@@ -130,7 +132,7 @@ public class TestFinalResult extends JPanel {
 			testResult.setText("시험에서 탈락했습니다.\n복습만이 살 길!\n해당 챕터 복습 후 재도전하세요.");
 		}
 		
-		this.addMouseListener(new MyMouseAdapter());
+		testResult.addMouseListener(new MyMouseAdapter());
 		
 		ShowQuestPage sp = new ShowQuestPage(mf, p, buttonIndex);
 		ShowQuestPage.index=0;
@@ -144,7 +146,7 @@ public class TestFinalResult extends JPanel {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if(e.getSource() == TestFinalResult) {
+			if(e.getSource() == testResult) {
 				ChangePanel.replacePanel(mf, TestFinalResult, new AcademyMain(mf,p));
 			}
 		}

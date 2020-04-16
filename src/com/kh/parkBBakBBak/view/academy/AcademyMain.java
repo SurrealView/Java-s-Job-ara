@@ -40,8 +40,6 @@ public class AcademyMain extends JPanel{
 		this.setLayout(null);
 		this.setBounds(0, 0, 1194, 834);
 
-
-
 		goBack = new JButton(new ImageIcon(new ImageIcon("images/backButton.png").getImage().getScaledInstance(60, 60, 0)));
 		goBack.setBounds(1100, 15, 60, 60);
 		goBack.setOpaque(false);
@@ -118,6 +116,7 @@ public class AcademyMain extends JPanel{
 		userChat.setFont(new Font("맑은 고딕", Font.PLAIN, 24));
 		userChat.setOpaque(false);
 		this.add(userChat);
+		userChat.setEditable(false);
 
 		JButton lecture = new JButton("1. 강의실에서 수업을 듣는다.");
 		lecture.setBounds(215, 620, 500, 57);
@@ -128,7 +127,7 @@ public class AcademyMain extends JPanel{
 		lecture.setHorizontalAlignment(lecture.LEFT);
 		this.add(lecture);
 
-		testRoom = new JButton("2. 시험장에서 시험을 본다.(배터리 1 감소)");
+		testRoom = new JButton("2. 시험장에서 시험을 본다.(체력 1 감소)");
 		testRoom.setBounds(215, 675, 500, 57);
 		testRoom.setFont(new Font("맑은 고딕", Font.PLAIN, 22));
 		testRoom.setBorderPainted(false);

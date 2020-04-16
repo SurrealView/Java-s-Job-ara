@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -116,18 +117,20 @@ public class TestMainPage extends JPanel{
 		javaMasterName.append("자바마스터");
 		javaMasterName.setFont(new Font("맑은 고딕", Font.BOLD, 25));
 		javaMasterName.setBounds(235, 570, 150, 30);
+		javaMasterName.setEditable(false);
 
 		JTextArea javaMasterChat = new JTextArea(950, 170);
 		javaMasterChat.setOpaque(false);
 		javaMasterChat.append("시험장을 선택하셨군요.\n4문제 이상 맞췄을 경우 합격, \n5문제 모두 맞추면 특별 선물이 있으니 최선을 다해 풀어보세요.");
 		javaMasterChat.setFont(new Font("맑은 고딕", Font.PLAIN, 23));
 		javaMasterChat.setBounds(235, 620, 660, 140);
+		javaMasterChat.setEditable(false);
 
 		Image godJava = new ImageIcon("images/teacher.png").getImage().getScaledInstance(220, 210, 0);
 		JLabel godJavaLb = new JLabel(new ImageIcon(godJava));
 		godJavaLb.setLayout(null);
 		godJavaLb.setBounds(230, 311, 220, 210);
-		
+
 		miniGame = new JButton("시작");
 		miniGame.setBounds(570, 170, 80, 80);
 		miniGame.addMouseListener(new MyMouseAdapter());
@@ -136,7 +139,7 @@ public class TestMainPage extends JPanel{
 		miniGame.setContentAreaFilled(false);
 
 
-		this.addMouseListener(new MyMouseAdapter());
+		javaMasterChat.addMouseListener(new MyMouseAdapter());
 
 		this.add(miniGame);
 		this.add(javaMasterChat);
@@ -159,7 +162,11 @@ public class TestMainPage extends JPanel{
 			if(e.getSource() == goBack) {
 				ChangePanel.replacePanel(mf, testMainPage,new AcademyMain(mf, p)); 
 			} else if(e.getSource() == miniGame){
-				ChangePanel.replacePanel(mf, testMainPage, new FindButtonGame(mf,p));
+				if(FindButtonGame.playCount == 0) {
+					ChangePanel.replacePanel(mf, testMainPage, new FindButtonGame(mf,p));
+				} else {
+					JOptionPane.showMessageDialog(mf, "미니게임은 하루에 한 번만 가능합니다.", "", JOptionPane.WARNING_MESSAGE);
+				}
 			} else {
 				ChangePanel.replacePanel(mf, testMainPage, new TestChooseChapter(mf,p));
 			}

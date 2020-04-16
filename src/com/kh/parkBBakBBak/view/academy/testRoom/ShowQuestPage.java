@@ -135,6 +135,7 @@ public class ShowQuestPage extends JPanel{
 
 		//챕터명 출력
 		JTextArea chapterName = new JTextArea();
+		chapterName.setEditable(false);
 		//buttonIndex에 따라 챕터 이름 표시
 		for(int i = 0; i < chapter.length; i++) {
 			if(buttonIndex == i) {
@@ -149,6 +150,7 @@ public class ShowQuestPage extends JPanel{
 
 		//문제출력
 		JTextArea questArea = new JTextArea();
+		questArea.setEditable(false);
 		questArea.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		questArea.setForeground(Color.WHITE);
 		questArea.setBounds(130, 170, 1000, 50);
