@@ -29,43 +29,52 @@ public class MiniGameResult extends JPanel {
 		this.p = p;
 		this.MiniGameResult = this;
 		
-		int index = FindButtonGame.index;
 		FindButtonGame.playCount++;		//게임결과화면에서 게임 횟수 증가, 1일 1회만 실행되도록 함
 		
-		System.out.println("결과페이지 index : " + index);
+		System.out.println("결과페이지 index : " + FindButtonGame.index);
 		System.out.println("결과패널생성");
-		
-		JTextArea gameResult = new JTextArea();
-		gameResult.setOpaque(false);
-		gameResult.append("");
-		gameResult.setFont(new Font("맑은 고딕", Font.BOLD, 25));
-		this.add(gameResult);
 		
 		Image chat = new ImageIcon("images/txtarea2.png").getImage().getScaledInstance(820, 270, 0);
 		JLabel chatLb = new JLabel(new ImageIcon(chat));
 		chatLb.setLayout(null);
 		chatLb.setBounds(180, 250, 820, 270);
-		this.add(chatLb);
+		
+		
+		JTextArea gameResult = new JTextArea();
+		gameResult.setOpaque(false);
+		gameResult.append("");
+		gameResult.setFont(new Font("맑은 고딕", Font.BOLD, 25));
+		
 		
 		Image background = new ImageIcon("images/minigameResultBack.png").getImage().getScaledInstance(1194, 834, 0);
 		JLabel backgroundLb = new JLabel(new ImageIcon(background));
 		backgroundLb.setBounds(0, 0, 1194, 834);
-		this.add(backgroundLb);
 		
-		if(index == 20) {
+		
+		if(FindButtonGame.index == 20) {
 			//버튼 다 찾았을때
 			gameResult.setText("노보노보 : 임무를 완수했구나! 이걸로 힘내서 더 열심히 공부하라구!\n커피쿠폰 + 1");
 			gameResult.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 			gameResult.setBounds(250, 355, 700, 400);
 			p.setCouponQTY(p.getCouponQTY() + 1);
 			
-		} else {
+		} else if(FindButtonGame.index < 20 && FindButtonGame.index > 0){
 			//버튼 다 못찾았을 때
 			gameResult.setBounds(250, 370, 600, 400);
 			gameResult.setText("노보노보 : 아쉽네.. 내일 다시 도전 해보라구!");
+			gameResult.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		} else if(FindButtonGame.index == 0) {
+			gameResult.setBounds(250, 370, 600, 400);
+			gameResult.setText("노보노보 : 뭐야.. 아무것도 안한거야?");
+			gameResult.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		}
 		
 		this.addMouseListener(new MyMouseAdapter());
+		
+		this.add(gameResult);
+		this.add(chatLb);
+		this.add(backgroundLb);
+		mf.add(this);
 	}
 	
 	class MyMouseAdapter extends MouseAdapter {
