@@ -27,10 +27,10 @@ public class SmallIntroduce2 extends JPanel {
 	private Font font;
 	private Player p;
 	private ArrayList<JButton> buttonArr = new ArrayList<JButton>();
-	private String[] question = new String[] { "지금부터 면접을 시작할 걸세", "배터리가 2 감소할거야", "준비가 되면 말을 걸어주시게" };
-	private String[] bigQuestion = new String[] { "지금 부터 면접이 실시 될 것 입니다.", "입장시 배터리가 2 감소됩니다.", "준비가 완료 되시면 시작하겠습니다" };
+	private String[] question = new String[] { "지금부터 면접을 시작할 걸세", "체력이 2 감소할거야", "준비가 되면 말을 걸어주시게" };
+	private String[] bigQuestion = new String[] { "지금 부터 면접이 실시 될 것 입니다.", "입장시 체력이 2 감소됩니다.", "준비가 완료 되시면 시작하겠습니다" };
 	private String[] foreignQuestion = new String[] { "Let's Start the interview now.\\n; ",
-			"if you enter, the battery will be reduced by 2.\\n; ", "if you're ready, let's get it start.\\n;" };
+			"if you enter, the HP will be reduced by 2.\\n; ", "if you're ready, let's get it start.\\n;" };
 
 	public SmallIntroduce2(JFrame mf,Player p) {
 		System.out.println("smallIntroduce2 입장");

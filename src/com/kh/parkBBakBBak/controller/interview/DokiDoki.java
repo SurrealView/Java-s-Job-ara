@@ -2,20 +2,28 @@ package com.kh.parkBBakBBak.controller.interview;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import com.kh.parkBBakBBak.model.vo.Player;
+import com.kh.parkBBakBBak.view.ChangePanel;
+import com.kh.parkBBakBBak.view.interview.ShowResult;
 
 public class DokiDoki extends Thread {
 
 	private JFrame mf;
 	private JPanel panel;
 	private String a = "";
+	private Player p;
 
 	public DokiDoki(JFrame mf, JPanel panel) {
 		this.mf = mf;
 		this.panel = panel;
+		this.p = p;
 	}
 
 	@Override

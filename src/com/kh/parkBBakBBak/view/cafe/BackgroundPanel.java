@@ -331,8 +331,8 @@ public class BackgroundPanel extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "				오늘의 메뉴판\n\n1.흑당마라민트초코쉐이크 : 배터리 2 감소        "
-						+ " \n\n2.달고나 명란마요 쉐이크 : 배터리 1 감소        \n\n3.아이스 아메리카노 : 배터리 1 회복        \n\n4.아이스 카페라떼 : 배터리 2 회복        \n\n5.아이스 바닐라라떼 : 배터리 3 회복             \n ",
+				JOptionPane.showMessageDialog(null, "				오늘의 메뉴판\n\n1.흑당마라민트초코쉐이크 : 체력 2 감소        "
+						+ " \n\n2.달고나 명란마요 쉐이크 : 체력 1 감소        \n\n3.아이스 아메리카노 : 체력 1 회복        \n\n4.아이스 카페라떼 : 체력 2 회복        \n\n5.아이스 바닐라라떼 : 체력 3 회복             \n ",
 						"오늘의 메뉴^.^", 1);
 
 			}
