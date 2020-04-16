@@ -234,12 +234,12 @@ public class WorldPanel extends JPanel {
 					ChangePanel.replacePanel(mf, panel, interview);
 				}
 			
-			// µ¿¹°ÀÇ½£
-			if (avatar.getX() >= 0 && avatar.getX() <= 65)
-				if (avatar.getY() == 0) {
-					avatar.setLocation(1500, 1500);
-					ChangePanel.replacePanel(mf, panel, new BasePanel(mf, p));
-				}
+//			// µ¿¹°ÀÇ½£
+//			if (avatar.getX() >= 0 && avatar.getX() <= 65)
+//				if (avatar.getY() == 0) {
+//					avatar.setLocation(1500, 1500);
+//					ChangePanel.replacePanel(mf, panel, new BasePanel(mf, p));
+//				}
 		
 
 			// Å×½ºÆ®¿ë : Ä³¸¯ÅÍÀÇ ¸Ç ¿ŞÂÊ À§ ±âÁØ x/yÁÂÇ¥

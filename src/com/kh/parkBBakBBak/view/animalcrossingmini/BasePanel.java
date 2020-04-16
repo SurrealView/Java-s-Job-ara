@@ -26,6 +26,7 @@ import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.ChangePanel;
 import com.kh.parkBBakBBak.view.MenuPanel;
 import com.kh.parkBBakBBak.view.WorldPanel;
+import com.kh.parkBBakBBak.view.home.HomePanel;
 import com.kh.parkBBakBBak.view.interview.SelectInterview;
 
 public class BasePanel extends JPanel {
@@ -76,7 +77,7 @@ public class BasePanel extends JPanel {
 		backButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ChangePanel.replacePanel(mf, panel, new WorldPanel(mf, p));
+				ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 			}
 		});
 
@@ -115,7 +116,7 @@ public class BasePanel extends JPanel {
 				if (chatIndex < chat.length) {
 					ment.setText(chat[chatIndex]);
 				} else if (chatIndex == chat.length) {
-					ChangePanel.replacePanel(mf, panel, new WorldPanel(mf, p));
+					ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 					bgm.stop();
 				}
 				chatIndex++;
@@ -132,7 +133,7 @@ public class BasePanel extends JPanel {
 					else if(chatIndex > 1)
 						beforeMoo.setIcon(allBlack);
 				} else if (chatIndex == chat.length) {
-					ChangePanel.replacePanel(mf, panel, new WorldPanel(mf, p));
+					ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 					bgm.stop();
 				}
 				chatIndex++;

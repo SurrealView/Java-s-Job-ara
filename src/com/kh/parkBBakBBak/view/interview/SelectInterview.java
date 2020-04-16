@@ -27,7 +27,7 @@ public class SelectInterview extends JPanel {
 	private Player p;
 	private Font font;
 	private ArrayList<JButton> buttonArr = new ArrayList<JButton>();
-	private String[] question = new String[] { "면접장에 입장하셨습니다", "중소 기업   (스킬 5개이상 보유) :", "대기업 (스킬 8개이상 보유) :",
+	private String[] question = new String[] { "면접장에 입장하셨습니다", "중소 기업   (스킬 5개이상 보유)", "대기업 (스킬 8개이상 보유)",
 			"해외 취업(Hidden)" };
 
 	public SelectInterview(JFrame mf, Player p) {
