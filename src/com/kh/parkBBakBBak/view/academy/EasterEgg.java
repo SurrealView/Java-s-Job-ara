@@ -153,8 +153,10 @@ public class EasterEgg extends JPanel {
 				case 1: case 2: case 3: case 4:	ment.setText(chat[chatIndex]); break;
 				case 5:
 					ment.setText(chat[chatIndex]);
+					if(p.getHp()>0) {
 					p.setHp(p.getHp() - 1);
 					p.setCouponQTY(p.getCouponQTY() + 1);
+					}
 					break;
 
 				case 6:

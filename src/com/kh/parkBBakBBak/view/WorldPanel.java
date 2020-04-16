@@ -26,6 +26,7 @@ import javax.swing.JPanel;
 import com.kh.parkBBakBBak.controller.interview.InterviewManager;
 import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.academy.AcademyMain;
+import com.kh.parkBBakBBak.view.animalcrossingmini.BasePanel;
 import com.kh.parkBBakBBak.view.area.AreaBlock;
 import com.kh.parkBBakBBak.view.cafe.BackgroundPanel;
 import com.kh.parkBBakBBak.view.home.HomePanel;
@@ -198,8 +199,6 @@ public class WorldPanel extends JPanel {
 //					p.setAvatar(avatar);
 					avatar.setLocation(1500, 1500);
 					ChangePanel.replacePanel(mf, panel, new AcademyMain(mf, p));
-//								MaybeAcademyPanel academy = new MaybeAcademyPanel(mf);
-//								ChangePanel.replacePanel(mf,panel,academy);
 
 				}
 			// 카페
@@ -209,6 +208,7 @@ public class WorldPanel extends JPanel {
 
 				    cafeBgm.start();
 				    cafeBgm.loop(cafeBgm.LOOP_CONTINUOUSLY);
+				    
 					BackgroundPanel cafe = new BackgroundPanel(mf, p);
 					ChangePanel.replacePanel(mf, panel, cafe);
 				}
@@ -216,7 +216,6 @@ public class WorldPanel extends JPanel {
 			// 역
 			if (avatar.getX() >= 820 && avatar.getX() <= 830)
 				if (avatar.getY() >= 550 && avatar.getY() <= 550) {
-					avatar.setLocation(avatar.getX(), avatar.getY() + 100);
 					avatar.setLocation(1500, 1500);
 					HomePanel home = new HomePanel(mf, p);
 					ChangePanel.replacePanel(mf, panel, home);
@@ -225,14 +224,23 @@ public class WorldPanel extends JPanel {
 			// 인터뷰 장소
 			if (avatar.getX() >= 850 && avatar.getX() <= 860)
 				if (avatar.getY() >= 100 && avatar.getY() <= 100) {
+					/*
 					mf.remove(panel);
 					mf.repaint();
-					avatar.setLocation(avatar.getX(), avatar.getY() + 100);
-					p.setAvatar(avatar);
+					*/
+//					p.setAvatar(avatar);
 					avatar.setLocation(1500, 1500);
 					SelectInterview interview = new SelectInterview(mf, p);
 					ChangePanel.replacePanel(mf, panel, interview);
 				}
+			
+			// 동물의숲
+			if (avatar.getX() >= 0 && avatar.getX() <= 65)
+				if (avatar.getY() == 0) {
+					avatar.setLocation(1500, 1500);
+					ChangePanel.replacePanel(mf, panel, new BasePanel(mf, p));
+				}
+		
 
 			// 테스트용 : 캐릭터의 맨 왼쪽 위 기준 x/y좌표
 //			System.out.println("x : " + avatar.getX() + " | y : " + avatar.getY());
