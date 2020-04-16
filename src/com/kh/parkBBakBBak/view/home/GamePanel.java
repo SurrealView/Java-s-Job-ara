@@ -64,7 +64,7 @@ public class GamePanel extends JPanel {
 				System.out.println("num : " + num);
 				LeejhMGManager lee = new LeejhMGManager();
 				result = lee.checkAnswer(num, ranNum);
-				System.out.println("¹¹³Ä¾¾¹ß : " + result);
+//				System.out.println("result : " + result);
 				if(result == true) {
 					System.out.println("ÄíÆù ¼ýÀÚ : " + p.getCouponQTY());
 					JButton checkAnswer = new JButton("Á¤´ä");

@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.ChangePanel;
+import com.kh.parkBBakBBak.view.animalcrossingmini.BasePanel;
 
 public class GameMain extends JPanel {
 	
@@ -62,8 +63,7 @@ public class GameMain extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// »óÇö¾¾²¨ ³ÖÀ¸¼¼¿ä
-//				ChangePanel.replacePanel(mf, gm, new HiddenGame(mf, p));
+				ChangePanel.replacePanel(mf, gm, new BasePanel(mf, p));
 			}
 		});
 		
