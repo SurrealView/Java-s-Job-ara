@@ -66,12 +66,12 @@ public class JaeHyung extends JPanel{
 					ta.setText("커피 많이 마시고 공부 열심히 하렴...");
 					tok++;
 				}else if(tok==3) {
-					ta.setText("빡빡은 미래의 나에게서\n쿠폰 한 개를 얻었다!!!");
+					ta.setText("빡빡은 미래의 나에게서\n쿠폰 네 개를 얻었다!!!");
 					tok++;
 				}else {
 					tok=0;
 					
-					u.setCouponQTY(u.getCouponQTY()+11111);
+					u.setCouponQTY(u.getCouponQTY()+4);
 					//u.setHp(u.getHp()+100);
 					System.out.println("QkrQKr패널 퇴장");
 					u.setPppppakk(u.getPppppakk()+1);
