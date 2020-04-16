@@ -194,8 +194,8 @@ public class WorldPanel extends JPanel {
 
 			// 각 패널 이동
 			// KH학원
-			if (avatar.getX() >= 280 && avatar.getX() <= 290)
-				if (avatar.getY() >= 560 && avatar.getY() <= 560) {
+			if (avatar.getX() >= 270 && avatar.getX() <= 300)
+				if (avatar.getY() >= 565 && avatar.getY() <= 565) {
 //					p.setAvatar(avatar);
 					avatar.setLocation(1500, 1500);
 					ChangePanel.replacePanel(mf, panel, new AcademyMain(mf, p));
@@ -203,7 +203,7 @@ public class WorldPanel extends JPanel {
 				}
 			// 카페
 			if (avatar.getX() >= 355 && avatar.getX() <= 370)
-				if (avatar.getY() >= 100 && avatar.getY() <= 100) {
+				if (avatar.getY() == 145/* && avatar.getY() <= 100*/) {
 					avatar.setLocation(1500, 1500);
 
 				    cafeBgm.start();
@@ -215,7 +215,7 @@ public class WorldPanel extends JPanel {
 			
 			// 역
 			if (avatar.getX() >= 820 && avatar.getX() <= 830)
-				if (avatar.getY() >= 550 && avatar.getY() <= 550) {
+				if (avatar.getY() == 580) {
 					avatar.setLocation(1500, 1500);
 					HomePanel home = new HomePanel(mf, p);
 					ChangePanel.replacePanel(mf, panel, home);
@@ -223,7 +223,7 @@ public class WorldPanel extends JPanel {
 			
 			// 인터뷰 장소
 			if (avatar.getX() >= 850 && avatar.getX() <= 860)
-				if (avatar.getY() >= 100 && avatar.getY() <= 100) {
+				if (avatar.getY() == 140) {
 					/*
 					mf.remove(panel);
 					mf.repaint();
@@ -243,7 +243,7 @@ public class WorldPanel extends JPanel {
 		
 
 			// 테스트용 : 캐릭터의 맨 왼쪽 위 기준 x/y좌표
-//			System.out.println("x : " + avatar.getX() + " | y : " + avatar.getY());
+			System.out.println("x : " + avatar.getX() + " | y : " + avatar.getY());
 
 			switch (key) {
 			case KeyEvent.VK_UP:
