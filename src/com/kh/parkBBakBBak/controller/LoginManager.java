@@ -116,6 +116,29 @@ public class LoginManager {
 		
 	}
 
+	public boolean duplicate(String id) {
+		
+		boolean du = false;
+		
+		ArrayList<Player> list = ld.readPlayerList();
+		
+		if(list != null) {
+			for(int i = 0; i < list.size(); i++) {
+				if(list.get(i).getUserId().equals(id)) {
+					System.out.println(id.compareTo(list.get(i).getUserId()));
+					System.out.println("id°ãÄ§");
+					du = true;
+					break;
+				} else {
+					System.out.println("id¾È°ãÄ§");
+					du = false;
+				}
+			}
+		}
+		
+		return du;
+	}	
+	
 	public Player getP() {
 		return p;
 	}
