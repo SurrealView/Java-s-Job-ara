@@ -77,6 +77,7 @@ public class BasePanel extends JPanel {
 		backButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				bgm.stop();
 				ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 			}
 		});
@@ -116,8 +117,8 @@ public class BasePanel extends JPanel {
 				if (chatIndex < chat.length) {
 					ment.setText(chat[chatIndex]);
 				} else if (chatIndex == chat.length) {
-					ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 					bgm.stop();
+					ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));	
 				}
 				chatIndex++;
 			}
@@ -133,8 +134,8 @@ public class BasePanel extends JPanel {
 					else if(chatIndex > 1)
 						beforeMoo.setIcon(allBlack);
 				} else if (chatIndex == chat.length) {
-					ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 					bgm.stop();
+					ChangePanel.replacePanel(mf, panel, new HomePanel(mf, p));
 				}
 				chatIndex++;
 			}
