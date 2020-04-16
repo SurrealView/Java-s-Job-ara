@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import com.kh.parkBBakBBak.controller.interview.InterviewManager;
 import com.kh.parkBBakBBak.model.vo.Player;
 import com.kh.parkBBakBBak.view.ChangePanel;
+import com.kh.parkBBakBBak.view.TestRoomMiniGame.FindButtonGame;
 import com.kh.parkBBakBBak.view.academy.AcademyMain;
 import com.kh.parkBBakBBak.view.interview.SelectInterview;
 
@@ -26,6 +27,7 @@ public class TestMainPage extends JPanel{
 	private JPanel testMainPage;
 	private Player p;
 	private JButton goBack;
+	private JButton miniGame;
 
 	public TestMainPage(JFrame mf,Player p) {
 		this.p=p;
@@ -42,64 +44,64 @@ public class TestMainPage extends JPanel{
 		goBack.setContentAreaFilled(false);
 		goBack.addMouseListener(new MyMouseAdapter());
 		this.add(goBack);
-		
-		 JLabel batteryCase = new JLabel(new ImageIcon(new ImageIcon("images/batteryCase.png").getImage().getScaledInstance(140, 45, 0)));
-	       batteryCase.setSize(140,45);
-	      batteryCase.setLocation(40, 40);
-	       this.add(batteryCase);
-	       
-	       String[] remainBattery = new String[] { "Battery1.png", "Battery2.png", "Battery3.png", "Battery4.png", "Battery5.png" };
 
-	       ArrayList<Image> batteryImage = new ArrayList<Image>();
-	       for (int i = 0; i < remainBattery.length; i++) {
-	          batteryImage.add(new ImageIcon(InterviewManager.ADDRESS + remainBattery[i]).getImage().getScaledInstance(140, 45, 0));
-	       }
+		JLabel batteryCase = new JLabel(new ImageIcon(new ImageIcon("images/batteryCase.png").getImage().getScaledInstance(140, 45, 0)));
+		batteryCase.setSize(140,45);
+		batteryCase.setLocation(40, 40);
+		this.add(batteryCase);
 
-	       ArrayList<JLabel> batteryLabels = new ArrayList<JLabel>();
+		String[] remainBattery = new String[] { "Battery1.png", "Battery2.png", "Battery3.png", "Battery4.png", "Battery5.png" };
 
-	       if(p.getHp() != 0) {
-	       for (int i = 0; i < p.getHp(); i++) {
-	          batteryLabels.add(new JLabel(new ImageIcon(batteryImage.get(i))));
-	          batteryLabels.get(i).setSize(140, 45);
-	          batteryLabels.get(i).setLocation(40, 40);
-	          }
-	       
-	       for(int i = 0; i < this.p.getHp(); i++) {
-	          this.add(batteryLabels.get(i));
-	          }
-	       
-	       }
-	       this.add(batteryCase);
-	       
-	             
-	       JLabel smallCoffee = SelectInterview.addJLabelImage(new JLabel(), "coffeeSmall.png", 21, 40);
-	       smallCoffee.setSize(21, 40);
-	       smallCoffee.setLocation(200, 42);
-	       this.add(smallCoffee);
+		ArrayList<Image> batteryImage = new ArrayList<Image>();
+		for (int i = 0; i < remainBattery.length; i++) {
+			batteryImage.add(new ImageIcon(InterviewManager.ADDRESS + remainBattery[i]).getImage().getScaledInstance(140, 45, 0));
+		}
 
-	       JLabel couponQty = new JLabel(" X " + p.getCouponQTY());
-	       couponQty.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
-	       couponQty.setForeground(Color.WHITE);
-	       couponQty.setSize(50, 40);
-	       couponQty.setLocation(220, 40);
-	      this.add(couponQty);
-	      
-	      JLabel dayWeekDay = new JLabel(p.getDay() + "ÀÏÂ÷" + " / " + p.getWeekDay() + "¿äÀÏ");
-	      dayWeekDay.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
-	      dayWeekDay.setForeground(Color.WHITE);
-	      dayWeekDay.setSize(150, 40);
-	      dayWeekDay.setLocation(280, 41);
-	      this.add(dayWeekDay);
-	      
-	      
-	      JLabel infoBox = new JLabel();
-	      infoBox.setSize(403,65);
-	      infoBox.setLocation(30,30);
-	      infoBox.setOpaque(true);
-	      infoBox.setBackground(new Color (0,0,0,150));
-	      this.add(infoBox);
-		
-		
+		ArrayList<JLabel> batteryLabels = new ArrayList<JLabel>();
+
+		if(p.getHp() != 0) {
+			for (int i = 0; i < p.getHp(); i++) {
+				batteryLabels.add(new JLabel(new ImageIcon(batteryImage.get(i))));
+				batteryLabels.get(i).setSize(140, 45);
+				batteryLabels.get(i).setLocation(40, 40);
+			}
+
+			for(int i = 0; i < this.p.getHp(); i++) {
+				this.add(batteryLabels.get(i));
+			}
+
+		}
+		this.add(batteryCase);
+
+
+		JLabel smallCoffee = SelectInterview.addJLabelImage(new JLabel(), "coffeeSmall.png", 21, 40);
+		smallCoffee.setSize(21, 40);
+		smallCoffee.setLocation(200, 42);
+		this.add(smallCoffee);
+
+		JLabel couponQty = new JLabel(" X " + p.getCouponQTY());
+		couponQty.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
+		couponQty.setForeground(Color.WHITE);
+		couponQty.setSize(50, 40);
+		couponQty.setLocation(220, 40);
+		this.add(couponQty);
+
+		JLabel dayWeekDay = new JLabel(p.getDay() + "ÀÏÂ÷" + " / " + p.getWeekDay() + "¿äÀÏ");
+		dayWeekDay.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		dayWeekDay.setForeground(Color.WHITE);
+		dayWeekDay.setSize(150, 40);
+		dayWeekDay.setLocation(280, 41);
+		this.add(dayWeekDay);
+
+
+		JLabel infoBox = new JLabel();
+		infoBox.setSize(403,65);
+		infoBox.setLocation(30,30);
+		infoBox.setOpaque(true);
+		infoBox.setBackground(new Color (0,0,0,150));
+		this.add(infoBox);
+
+
 		Image background = new ImageIcon("images/classroom.png").getImage().getScaledInstance(1194, 834, 0);
 		JLabel backgroundLb = new JLabel(new ImageIcon(background));
 		backgroundLb.setBounds(0, 0, 1194, 834);
@@ -125,19 +127,26 @@ public class TestMainPage extends JPanel{
 		JLabel godJavaLb = new JLabel(new ImageIcon(godJava));
 		godJavaLb.setLayout(null);
 		godJavaLb.setBounds(230, 311, 220, 210);
+		
+		miniGame = new JButton("½ÃÀÛ");
+		miniGame.setBounds(570, 170, 80, 80);
+		miniGame.addMouseListener(new MyMouseAdapter());
+		miniGame.setOpaque(false);
+		miniGame.setBorderPainted(false);
+		miniGame.setContentAreaFilled(false);
 
 
 		this.addMouseListener(new MyMouseAdapter());
-		 
-		
+
+		this.add(miniGame);
 		this.add(javaMasterChat);
 		this.add(javaMasterName);
 		this.add(godJavaLb);
 		this.add(chatLb);
 		this.add(backgroundLb);
 		mf.add(this);
-		
-	
+
+
 		TestResult.answerCount = 0;
 		ShowQuestPage sq = new ShowQuestPage();
 		ShowQuestPage.index = 0;
@@ -149,6 +158,8 @@ public class TestMainPage extends JPanel{
 		public void mouseClicked(MouseEvent e) {
 			if(e.getSource() == goBack) {
 				ChangePanel.replacePanel(mf, testMainPage,new AcademyMain(mf, p)); 
+			} else if(e.getSource() == miniGame){
+				ChangePanel.replacePanel(mf, testMainPage, new FindButtonGame(mf,p));
 			} else {
 				ChangePanel.replacePanel(mf, testMainPage, new TestChooseChapter(mf,p));
 			}

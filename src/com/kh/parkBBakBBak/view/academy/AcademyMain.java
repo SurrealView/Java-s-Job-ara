@@ -119,8 +119,6 @@ public class AcademyMain extends JPanel{
 		userChat.setOpaque(false);
 		this.add(userChat);
 
-
-
 		JButton lecture = new JButton("1. °­ÀÇ½Ç¿¡¼­ ¼ö¾÷À» µè´Â´Ù.");
 		lecture.setBounds(215, 620, 500, 57);
 		lecture.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 22));
@@ -181,7 +179,6 @@ public class AcademyMain extends JPanel{
 			if(e.getSource() == goBack) {
 				ChangePanel.replacePanel(mf, academyMain, new WorldPanel(mf, p)); 
 			}
-
 		}
 	}
 }
