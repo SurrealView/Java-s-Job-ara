@@ -120,7 +120,7 @@ public class HomeEnd2 extends JPanel {
 		JLabel text1 = new JLabel("??? : ºýºý¾¾! 9½ÃÀÎµ¥ ¾îµð¿¡¿ä!!! :<");
 		text1.setSize(715,45);
 		text1.setLocation(240,551);
-		text1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+		text1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 24));
 		text1.setBackground(new Color(240,247,247));
 		text1.setBorder(null);
 		this.add(text1);

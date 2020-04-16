@@ -116,7 +116,7 @@ public class HomeSave extends JPanel {
 		JButton text1 = new JButton("1. ¿·¿ª ¿‹¥Ÿ. («ˆ¿Á±Ó¡ˆ ¡¯«‡ªÛ»≤ ¿˙¿Â)");
 		text1.setSize(715,45);
 		text1.setLocation(240,551);
-		text1.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 30));
+		text1.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 24));
 		text1.setBackground(new Color(240,247,247));
 		text1.setBorder(null);
 		text1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -141,7 +141,7 @@ public class HomeSave extends JPanel {
 		JButton text2 = new JButton("2. ∞‘¿”¿ª «—¥Ÿ.");
 		text2.setSize(715,45);
 		text2.setLocation(240,611);
-		text2.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 30));
+		text2.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 24));
 		text2.setBackground(new Color(240,247,247));
 		text2.setBorder(null);
 		text2.setHorizontalAlignment(SwingConstants.LEFT);
