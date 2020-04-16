@@ -100,13 +100,11 @@ public class GamePanel extends JPanel {
 						
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							JOptionPane.showMessageDialog(mf, "쿠폰 하나가 사라집니다.", "오답", JOptionPane.PLAIN_MESSAGE);
+							JOptionPane.showMessageDialog(mf, "땡!", "오답", JOptionPane.PLAIN_MESSAGE);
 							ChangePanel.replacePanel(mf, gp, new HomePanel(mf, p)); 
 						}
 					});
-					
-					p.setCouponQTY(p.getCouponQTY() - 1);
-					System.out.println(p.getCouponQTY());
+//					System.out.println(p.getCouponQTY());
 				}
 				
 			}
