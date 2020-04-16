@@ -104,6 +104,7 @@ public class AcademyMain extends JPanel{
 		infoBox.setBackground(new Color (0,0,0,150));
 		this.add(infoBox);
 
+		
 		Image background = new ImageIcon("images/classroom.png").getImage().getScaledInstance(1194, 834, 0);
 		JLabel backgroundLb = new JLabel(new ImageIcon(background));
 		backgroundLb.setBounds(0, 0, 1194, 834);
