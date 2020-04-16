@@ -117,6 +117,7 @@ public class TestChooseChapter extends JPanel {
 		chooseChapter.setForeground(Color.WHITE);
 		chooseChapter.setBounds(400, 70, 300, 50);
 		blackBoardLb.add(chooseChapter);
+		chooseChapter.setEditable(false);
 
 		Image smallChat = new ImageIcon("images/txtarea2.png").getImage().getScaledInstance(954, 302, 0);
 		JLabel smallChatLb = new JLabel(new ImageIcon(smallChat));
@@ -128,9 +129,9 @@ public class TestChooseChapter extends JPanel {
 		
 		noticeBattery = new JTextArea();
 		if(p.getHp() > 0) {
-			noticeBattery.setText("시험을 시작합니다.\n배터리가 1 감소합니다.");
+			noticeBattery.setText("시험을 시작합니다.\n체력이 1 감소합니다.");
 		} else if(p.getHp() <= 0) {
-			noticeBattery.setText("배터리가 부족합니다.\n메인화면으로 돌아갑니다.");
+			noticeBattery.setText("체력이 부족합니다.\n메인화면으로 돌아갑니다.");
 		}
 
 		
@@ -138,6 +139,7 @@ public class TestChooseChapter extends JPanel {
 		noticeBattery.setBounds(130, 100, 400, 200);
 		noticeBattery.setOpaque(false);
 		smallChatLb.add(noticeBattery);
+		noticeBattery.setEditable(false);
 
 		String[] chapter = {"0. 변수", "1. 연산자", "2. 제어문", "3. 배열", "4. 객체", "5. 상속", "6. 다형성", "7. API", "8. 예외처리", "9. 컬렉션"};
 
@@ -189,7 +191,7 @@ public class TestChooseChapter extends JPanel {
 
 							TestChooseChapter.remove(blackBoardLb);
 							TestChooseChapter.repaint();
-							TestChooseChapter.addMouseListener(new MyMouseAdapter());
+							noticeBattery.addMouseListener(new MyMouseAdapter());
 						}
 						
 					}
