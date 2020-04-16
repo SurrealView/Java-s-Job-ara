@@ -139,6 +139,7 @@ public class EasterEgg extends JPanel {
 		ment.setLocation(250,540);
 		ment.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		ment.setBackground(new Color(240,247,247));
+		ment.setEditable(false);
 		this.add(ment);
 
 
