@@ -44,6 +44,7 @@ public class MiniGameResult extends JPanel {
 		gameResult.setOpaque(false);
 		gameResult.append("");
 		gameResult.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25));
+		gameResult.setEditable(false);
 		
 		
 		Image background = new ImageIcon("images/minigameResultBack.png").getImage().getScaledInstance(1194, 834, 0);
