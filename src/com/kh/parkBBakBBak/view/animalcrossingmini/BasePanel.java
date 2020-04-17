@@ -37,10 +37,10 @@ public class BasePanel extends JPanel {
 	private Player p;
 	private int chatIndex = 0;
 	public static Clip bgm;
-	private String[] chat = new String[] { "미안하다구리 이거 보여주려고 패널 추가로 넣었다구리", "무 값 변동 실화냐구리", "진짜 동물의 숲은 전설이다구리....",
-			"게임을 하고 싶다면 말을 다시 한번 말을 걸어줘 구리" };
-	private String[] gameChat = new String[] { "간단한 게임이야구리", "5초 안에 나를 12번 터치하면 빡빡님의 승리야구리",
-			"불이익 같은 건 없으니까 안심하고 즐기면 돼구리", "이제 게임 시작한다구리" };
+	private String[] chat = new String[] { "미안하다구리 이거 보여주려고 \n패널 추가로 넣었다구리", "무 값 변동 실화냐구리", "진짜 동물의 숲은 \n전설이다구리....",
+			"게임을 하고 싶다면 \n다시 한번 말을 걸어줘 구리" };
+	private String[] gameChat = new String[] { "간단한 게임이야구리", "5초 안에 나를 12번 터치하면 \n빡빡님의 승리야구리",
+			"불이익 같은 건 없으니까 \n안심하고 즐기면 돼구리", "이제 게임 시작한다구리" };
 	private JLabel nook;
 	public static int count = 0;
 	public static int first = 0;
@@ -114,7 +114,7 @@ public class BasePanel extends JPanel {
 		ment.setEditable(false);
 		ment.setSize(370, 80);
 		ment.setLocation(410, 570);
-		ment.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		ment.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
 		ment.setBackground(new Color(255, 250, 228));
 		this.add(ment);
 

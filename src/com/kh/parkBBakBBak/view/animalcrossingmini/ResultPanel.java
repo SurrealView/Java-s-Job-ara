@@ -25,7 +25,7 @@ public class ResultPanel extends JPanel {
 	private JPanel panel;
 	private Player p;
 	private int chatIndex = 0;
-	private String[] chat = new String[] { "빡빡님이 이겼다구리", "빡빡님이 졌다구리. 좀 더 노력해보는게 좋을 것 같다구리" };
+	private String[] chat = new String[] { "빡빡님이 이겼다구리", "빡빡님이 졌다구리. \n좀 더 노력해보는게 좋을 것 같다구리" };
 
 	public ResultPanel(JFrame mf, Player p, int win) {
 		this.mf = mf;
@@ -62,7 +62,7 @@ public class ResultPanel extends JPanel {
 		ment.setEditable(false);
 		ment.setSize(370, 80);
 		ment.setLocation(410, 570);
-		ment.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		ment.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
 		ment.setBackground(new Color(255, 250, 228));
 		this.add(ment);
 		ment.addMouseListener(new MouseAdapter() {
