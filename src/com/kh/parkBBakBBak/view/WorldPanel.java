@@ -233,17 +233,9 @@ public class WorldPanel extends JPanel {
 					SelectInterview interview = new SelectInterview(mf, p);
 					ChangePanel.replacePanel(mf, panel, interview);
 				}
-			
-//			// 동물의숲
-//			if (avatar.getX() >= 0 && avatar.getX() <= 65)
-//				if (avatar.getY() == 0) {
-//					avatar.setLocation(1500, 1500);
-//					ChangePanel.replacePanel(mf, panel, new BasePanel(mf, p));
-//				}
-		
 
 			// 테스트용 : 캐릭터의 맨 왼쪽 위 기준 x/y좌표
-			System.out.println("x : " + avatar.getX() + " | y : " + avatar.getY());
+//			System.out.println("x : " + avatar.getX() + " | y : " + avatar.getY());
 
 			switch (key) {
 			case KeyEvent.VK_UP:
